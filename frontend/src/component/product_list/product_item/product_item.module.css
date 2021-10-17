@@ -3,14 +3,20 @@
   display: flex;
   height: 120px;
   width: 100%;
+  padding: 6px 0;
   border-bottom: 1px solid lightgray;
+}
+.container {
+  display: flex;
+  cursor: pointer;
 }
 /* 좌측 이미지 영역 */
 .imagesec {
-  width: 30%;
+  width: 102px;
+  height: 104px;
   margin: 0.5rem;
   background-color: lightgray;
-  border-radius: 5px;
+  border-radius: 6px;
   color: white;
   text-align: center;
   font-size: 75px;
@@ -19,6 +25,7 @@
 .bycle_img {
   width: 102px;
   height: 104px;
+  border-radius: 6px;
 }
 
 /* 우측 상품 상세설명 */

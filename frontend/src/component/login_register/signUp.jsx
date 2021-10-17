@@ -15,9 +15,9 @@ const SignUp = (props) => {
         "phone": '',
     });
 
-    const goToLogin = () => {
-        history.push({
-            pathname: "/login"
+    const goBack = () => {
+        history.goBack({
+            //state: 'asdf'
         })
     }
 
@@ -55,7 +55,7 @@ const SignUp = (props) => {
 
 
             alert(`id: ${signUpdata.username}으로 회원가입 되었습니다.`)
-            goToLogin();
+            goBack();
         }
     }
 
@@ -71,7 +71,7 @@ const SignUp = (props) => {
 
     return (
         <div className={styles.signUp}>
-            <button className={styles.back} onClick={goToLogin}><i className="fas fa-arrow-left"></i></button>
+            <button className={styles.back} onClick={goBack}><i className="fas fa-arrow-left"></i></button>
             <h1 className={styles.title}>Lend</h1>
             {/* 회원가입 폼 */}
             <form className={styles.form} onSubmit={handleSubmit}>

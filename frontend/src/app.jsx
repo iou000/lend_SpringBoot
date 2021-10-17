@@ -7,6 +7,7 @@ import SignUp from './component/login_register/signUp';
 import MyProduct from './component/header/myproduct/myproduct';
 import Main from './component/main/main';
 import Search from './component/search/search';
+import ProductDetail from './component/product_list/product_detail';
 
 function App({kakaoAuthService}) {
   return (
@@ -41,6 +42,11 @@ function App({kakaoAuthService}) {
           {/* 회원가입 페이지 */}
           <Route exact path="/signUp">
             <SignUp />
+          </Route>
+          
+          {/* 상품 상세 페이지 */}
+          <Route path="/product/:id">
+            <ProductDetail />
           </Route>
 
           {/* 검색 페이지 */}

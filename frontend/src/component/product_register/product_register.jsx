@@ -8,10 +8,8 @@ function ProductRegister() {
     // 라우터
     const history = useHistory();
     
-    const goToHome = () => {
-        history.push({
-            pathname: "/"
-        })
+    const goBack = () => {
+        history.goBack();
     }
     // 이미지
     const [imgBase64, setImgBase64] = useState([]); // 미리보기
@@ -106,7 +104,7 @@ function ProductRegister() {
             return false;
         } else {
             alert(`'${productData.product_name}'제목으로 상품등록 완료!`);
-            goToHome();
+            goBack();
         }
     }
 
@@ -124,7 +122,7 @@ function ProductRegister() {
             {/* Header */}
             <div className={styles.header}>
                 <div className={styles.header_left}>
-                    <button className={styles.gotoHome} onClick={goToHome}><i className="fas fa-arrow-left"></i></button>
+                    <button className={styles.goBack} onClick={goBack}><i className="fas fa-arrow-left"></i></button>
                 </div>
                 <div className={styles.title}>
                     <h1 className={styles.title_h1}>상품 등록</h1>

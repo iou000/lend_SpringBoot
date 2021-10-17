@@ -6,10 +6,8 @@ import styles from './search.module.css';
 
 const Search = (props) => {
     const history = useHistory();
-    const goToMain = () => {
-        history.push({
-            pathname: "/"
-        })
+    const goBack = () => {
+        history.goBack();
     }
     // 검색어텍스트
     const[inputText,setInputText] = useState('');
@@ -29,18 +27,19 @@ const Search = (props) => {
     //검색어 텍스트 삭제
     const onDeleteInput = () => {
         inputRef.current.value = "";
-        setSearchProducts([]);
-        messageRef.current.style="display:block;";
     }
 
     const onSearch = (inputText) => {
         //console.log(inputText);
-        fetch(process.env.PUBLIC_URL + "/static/data_sample.json")
+        fetch(process.env.PUBLIC_URL + "/static/data_sample.json") // /api/search?query=검색어 로 get요청 해줘야함.
         .then(res => res.json())
         .then(data => data.products)
         //data.products에 검색결과가 없다고 담겨오면
         //messageRef.current에 검색결과가 없다고 해줘야햠.
         .then(searchProd => {
+            // if(searchProd === "결과없음") {
+            //   messageRef.current에 검색결과가 없다고 dom을 만들어줘야함. 다시 검색했을 때도 없다는 dom이 나오면 안되니까 없애는거 먼저 써줘야함.
+            // }
             searchProd = searchProd.filter(prod => {
                 if(prod.product_name.includes(inputText) || 
                     prod.product_description.includes(inputText) ||
@@ -71,7 +70,7 @@ const Search = (props) => {
     return (
         <div className={styles.search}>
             <div className={styles.search_header}>
-                <button className={styles.back} onClick={goToMain}>
+                <button className={styles.back} onClick={goBack}>
                     <i className="fas fa-arrow-left"></i>
                 </button>
                 <div className={styles.inputBox}>
@@ -93,7 +92,7 @@ const Search = (props) => {
             <div className={styles.message} ref={messageRef}>
                 <h2>검색어를 입력해주세용.</h2>
             </div>
-            <ProductList products={searchProducts} /> 
+            {searchProducts &&<ProductList products={searchProducts} />}
         </div>
     )
 
