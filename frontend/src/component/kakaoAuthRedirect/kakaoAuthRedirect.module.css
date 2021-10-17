@@ -1,0 +1,30 @@
+.kakaoAuthRedirect {
+  display: flex;
+  align-items: center;
+}
+
+.loading {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  border: 3px solid #fee500;
+  border-bottom: 3px solid white;
+  animation: spin 1.5s linear infinite;
+}
+.message {
+  font-size: 1.4em;
+  margin-right: 1rem;
+  color: skyblue;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

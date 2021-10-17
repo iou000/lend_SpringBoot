@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 3.2rem;
+  background: skyblue;
+  border-bottom: 1px solid lightgray;
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: 0;
+}
+
+.btn {
+  color: snow;
+  cursor: pointer;
+}
+
+.barBtn {
+  font-size: 1.5rem;
+  margin-left: 0.5em;
+}
+
+.title {
+  margin-left: 1.2rem;
+}
+
+.title_h1 {
+  font-size: 2.2em;
+  color: snow;
+}
+
+.header_right {
+  margin-right: 0.5rem;
+}
+
+.searchBtn {
+  font-size: 1.3rem;
+}
+
+.filterBtn {
+  font-size: 1.2rem;
+}

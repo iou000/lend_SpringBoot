@@ -1,0 +1,127 @@
+/* 전체 틀 */
+.left_pop {
+  position: absolute;
+  display: block;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+}
+
+.pop_menu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: snow;
+  width: 300px;
+  height: 100vh;
+}
+
+/* 로그인시 메뉴 */
+.beforeLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  height: 90px;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid lightgray;
+}
+
+.message {
+  font-size: 0.8em;
+  color: darkgray;
+}
+
+.move_login_page {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: skyblue;
+  cursor: pointer;
+}
+
+/* 하단 프로필메뉴 */
+.pop_profile {
+  display: flex;
+  width: 90%;
+  height: 60px;
+  padding: 0.5rem 0;
+  font-size: 1.1em;
+  /* background-color: antiquewhite; */
+}
+
+.profile_left {
+  display: flex;
+  width: 20%;
+  align-content: center;
+  padding-top: 10px;
+  padding-right: 5px;
+}
+
+.profile_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 80%;
+}
+
+.profileImg {
+  height: 3rem;
+  width: 3rem;
+  font-size: 3rem;
+  color: darkgray;
+  cursor: pointer;
+}
+
+.nickName {
+  color: slategray;
+  margin-left: 0.5rem;
+}
+
+.move_profile_page {
+  font-size: 0.6em;
+  color:skyblue;
+  text-align: start;
+  padding: 0;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+/* 내 등록상품 */
+.pop_profilemenu {
+  display: flex;
+  width: 90%;
+  height: 60px;
+  padding: 0.5rem 0;
+  font-size: 1.1em;
+  /* background-color: red; */
+  cursor: pointer;
+}
+
+.profilemenu_left {
+  display: flex;
+  width: 20%;
+  padding-left: 6px;
+}
+
+.profilemenuImg {
+  font-size: 2.2rem;
+  color: skyblue;
+  cursor: pointer;
+}
+
+.profilemenu_right {
+  width: 80%;
+  margin: auto 0;
+  padding-left: 10px;
+}
+
+.myProduct {
+  color: slategray;
+}
+
+
+
+

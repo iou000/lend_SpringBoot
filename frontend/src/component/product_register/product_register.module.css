@@ -1,0 +1,158 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 스크롤바 디자인 */
+.content::-webkit-scrollbar,
+.productDesc::-webkit-scrollbar {
+    width: 0.15em;
+}
+
+.content::-webkit-scrollbar-thumb,
+.productDesc::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+    border-radius: 1em;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 3.2rem;
+    background: skyblue;
+    color: snow;
+    border-bottom: 1px solid lightgray;
+    margin: 0;
+    padding: 0;
+    position: sticky;
+    top: 0;
+}
+
+.gotoHome {
+    color: snow;
+    font-size: 1.5rem;
+    margin-left: 0.3rem;
+}
+
+.title {
+    padding-left: 5rem;
+}
+
+/* Content */
+.content {
+    width: 100%;
+    height: 93%;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+/* 사진 추가 */
+.product_photo {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 20px;
+}
+
+.imgInput {
+    display: none;
+}
+
+.photo_inputBtn {
+    width: 100px;
+    height: 100px;
+    background-color: lightskyblue;
+    color: snow;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px #999;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-left: 130px;
+}
+
+/* 내용 추가 */
+.inputContent {
+    width: 100%;
+}
+
+/* Input 전체 css */
+.inputContent input {
+    height: 36px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 4px;
+    margin: 6px 10px;
+    font-family: "Open Sans", sans-serif;
+    background-color: #f3f3f3;
+    padding: 0px 10px;
+}
+
+/* 상품 이름 */
+.productName {
+    width: 89%;
+    font-weight: bold;
+}
+
+/* 자전거 종류 */
+.bikeStyle {
+    margin: 6px 10px;
+    width: 22em;
+    height: 36px;
+    border: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    background-color: #f3f3f3;
+}
+
+/* 상품 가격 */
+.priceDiv {
+    display: flex;
+}
+.productDayPrice,
+.productHourPrice {
+    min-width: 30px;
+}
+
+/* 상품 상세설명 */
+.productDesc {
+    min-height: 210px;
+    width: 89%;
+    height: 36px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 4px;
+    margin: 6px 10px;
+    font-family: "Open Sans", sans-serif;
+    background-color: #f3f3f3;
+    resize: none;
+    padding: 3px 10px;
+} 
+
+/* 상품 제출 */
+.product_submit {
+    display: flex;
+    width: 100%;
+    height: 30%;
+    margin-top: 10px;
+}
+
+.submitBtn {
+    background-color: lightskyblue;
+    color: snow;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 20rem;
+    height: 50px;
+    margin: 0 auto;
+    cursor: pointer;
+}

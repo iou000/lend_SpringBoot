@@ -1,0 +1,67 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 스크롤바 디자인 */
+.products::-webkit-scrollbar {
+    width: 0.15em;
+}
+
+.products::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 1em;
+}
+
+/* 헤더 */
+.header {
+    width: 100%;
+    height: 2.3rem;
+    display: flex;
+    flex-direction: row;
+    background-color: snow;
+}
+
+/* 뒤로가기 버튼 */
+.gotoHome {
+    color: skyblue;
+    font-size: 1.5rem;
+    margin-left: 0.3rem;
+}
+
+.bikeUse {
+    background-color: snow;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 22.1rem;
+}
+
+.bikeRent {
+    background-color: snow;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 22.1rem;
+}
+
+.products {
+    overflow-y: scroll;
+}
+
+.bikeTitle {
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    background-color: skyblue;
+}
+
+.bikeTitle span {
+    font-size: 24px;
+    color: snow;
+    text-align: center;
+    font-weight: bold;
+}

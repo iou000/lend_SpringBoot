@@ -1,0 +1,58 @@
+.signUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.back {
+  justify-content: flex-start;
+  color: skyblue;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  font-size: 24px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.title {
+  font-size: 4em;
+  color: skyblue;
+}
+.form {
+  width: 85%;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8em;
+  width: 100%;
+  font-weight: bold;
+}
+
+.input {
+  border: solid 1px skyblue;
+  border-radius: 2px;
+  background-color: whitesmoke;
+  height: 2rem;
+  font-size: 1em;
+  color: rgb(54, 54, 54);
+  margin-bottom: 1rem;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.submit {
+  width: 100%;
+  height: 2.5rem;
+  background-color: skyblue;
+  color: whitesmoke;
+  border: solid 1px skyblue;
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 1rem 0;
+}

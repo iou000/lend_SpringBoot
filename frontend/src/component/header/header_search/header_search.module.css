@@ -1,0 +1,36 @@
+.containerSearch {
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100vh;
+}
+
+.search {
+    min-width: 359px;
+    min-height: 40px;
+    border: 2px lightskyblue;
+    margin: 20px 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.searchContent {
+    width: 160px;
+    min-height: 300px;
+    color: snow;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.searchContent h2 {
+    margin: 9px auto;
+    font-size: 30px;
+}
+.searchContent span {
+    margin: 5px auto;
+    font-size: 25px;
+}

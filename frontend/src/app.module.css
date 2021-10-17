@@ -1,0 +1,15 @@
+button {
+  border: none;
+  background: transparent;
+}
+
+.app {
+  margin: 0 auto;
+}
+
+/* 반응형 | 미디어 쿼리 */
+@media screen and (max-width: 20000px) {
+  .app {
+    width: 375px;
+  }
+}

@@ -1,0 +1,78 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: snow;
+}
+
+.search_header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 3.2rem;
+    border-bottom: 1px solid lightgray;
+    position: sticky;
+}
+
+.back {
+    color: skyblue;
+    margin: 0.5rem;
+    font-size: 24px;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2.2rem;
+    background-color: rgb(230, 230, 230);
+    border-radius: 6px;
+    margin-right: 16px;
+}
+
+.search_input {
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    border: none;
+    width: 85%;
+    margin-right: 24px;
+    margin-left: 12px;
+    height: 2.2rem;
+}
+
+
+.search_input:focus {
+    outline: none;
+}
+
+
+
+/* search input x버튼삭제 */
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{
+    display: none;
+}
+
+.cancel {
+    cursor: pointer;
+    color:lightslategray;
+    margin: 0;
+    font-size: 18px;
+}
+
+
+.message {
+    width: 70%;
+    text-align: center;
+    color: rgb(31, 31, 31);
+    margin-top: 2rem;
+}

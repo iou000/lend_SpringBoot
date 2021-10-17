@@ -1,0 +1,54 @@
+/* 아이템 바 */
+.product_item {
+  display: flex;
+  height: 120px;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+}
+/* 좌측 이미지 영역 */
+.imagesec {
+  width: 30%;
+  margin: 0.5rem;
+  background-color: lightgray;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  font-size: 75px;
+}
+
+.bycle_img {
+  width: 102px;
+  height: 104px;
+}
+
+/* 우측 상품 상세설명 */
+.descsec {
+  width: 70%;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  padding: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* 상세설명 세부사항 */
+.product_title {
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.product_desc {
+  font-size: 0.6em;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product_seller {
+  font-size: 0.4em;
+}
+
+.product_price {
+  width: 100%;
+  text-align: right;
+  font-size: 0.8em;
+}

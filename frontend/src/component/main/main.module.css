@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
+}
+
+/* 상품 등록 플로팅 버튼 */
+.float{
+	position:absolute;
+	width:60px;
+	height:60px;
+	bottom:45px;
+	right:15px;
+	background-color: skyblue;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+    font-size: 30px;
+    cursor: pointer;
+}
