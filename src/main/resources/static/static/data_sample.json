@@ -1,0 +1,121 @@
+{
+
+    "products": [
+      {
+        "id": 1,
+        "city": "서울",
+        "gu": "동작구",
+        "product_name": "디스크빌920 유럽 클래식로드 오토센서 라이트",
+        "product_type": "load",
+        "product_description": "자전거 본연의 기능을 넘어 스타일리시함까지 갖춘 클래식 로드바이크입니다. 사용하실분 연락주세요",
+        "member": "달봉이",
+        "rent_day": "1",
+        "price_rent_day": "3000",
+        "img_url": "http://jike.co.kr/web/product/big/jaike_1600.jpg"
+      },
+      
+      {
+          "id": 2,
+          "city": "서울",
+          "gu": "관악구",
+          "product_name": "20인치 비치크루져 클래식 미니벨로 Black",
+          "product_type": "mini_velo",
+          "product_description": "이동수단을 넘어 멋스러움을 추구하는 패션피플들에게 보다 사랑받는 잇 아이템입니다. 사용하실분 연락주세요.",
+          "member": "멍충이",
+          "rent_day": "1",
+          "price_rent_day": "2000",
+          "img_url": "http://jike.co.kr/web/product/big/jaike_1623.jpg"
+      },
+
+      {
+          "id": 3,
+          "city": "서울",
+          "gu": "서초구",
+          "product_name": "제트3",
+          "product_type": "mountain",
+          "product_description": "자전거를 탈일이 별로 없어져서 빌려쓰실분은 연락주세요.",
+          "member": "남도일",
+          "rent_day": "1",
+          "price_rent_day": "2500",
+          "img_url": "https://thumbnail10.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/2018/07/06/21/4/9647fafa-cbc7-4f8a-97e1-870191bda770.jpg"
+      },
+
+      {
+        "id": 4,
+        "city": "의왕시",
+        "gu": "부곡동",
+        "product_name": "유콘-D 105",
+        "product_type": "load",
+        "product_description": "포장도로에서 타기 아주 좋고 진짜 잘나가요. 이거 타면 다른 자전거 못탐.. 며칠동안 빌려서 사용하실분 연락주세요.",
+        "member": "박형석",
+        "rent_day": "1",
+        "price_rent_day": "3000",
+        "img_url": "https://thumbnail10.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/2017/09/13/10/0/6014ab97-9d4c-4d1b-b67c-05defd2e971b.jpg"
+      },
+
+
+      {
+        "id": 5,
+        "city": "서울",
+        "gu": "동작구",
+        "product_name": "자비스 16",
+        "product_type": "load",
+        "product_description": "자주안타서.. 며칠 빌려쓰실분 연락주세요.",
+        "member": "동작구보안관",
+        "rent_day": "1",
+        "price_rent_day": "1000",
+        "img_url": "https://thumbnail6.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/2021/06/06/11/6/fa78f9e5-6be7-44a8-9d9e-448c7dcda63e.jpg"
+      },
+
+      {
+        "id": 6,
+        "city": "서울",
+        "gu": "노원구",
+        "product_name": "탈레스 HT500",
+        "product_type": "electric",
+        "product_description": "전기자전거인데 오토바이를 사버려서 잘 안타서요... 타다가 마음에들면 중고로 판매도 할 수 있으니 연락주세요.",
+        "member": "비둘기사냥꾼",
+        "rent_day": "1",
+        "price_rent_day": "5000",
+        "img_url": "https://thumbnail6.coupangcdn.com/thumbnails/remote/492x492ex/image/product/image/vendoritem/2019/04/01/3311121426/82a96084-f0b2-4399-91ca-2673b22a4af9.jpg"
+      },
+
+      {
+        "id": 7,
+        "city": "서울",
+        "gu": "강남구",
+        "product_name": "엑시언 24",
+        "product_type": "kids",
+        "product_description": "우리 애가 타던건데 이제 애가 너무 커져버렸어요.. 둘째가 아직 어린데 둘째 클 때까지 자전거를 쓰지 않을거라서.. 빌리실분 연락주세요.",
+        "member": "달봉이",
+        "rent_day": "1",
+        "price_rent_day": "1500",
+        "img_url": "https://thumbnail6.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/9919/e9d9d28b681b6b2f56842c86b85f67e861dc9523b8b0a1c36eb91d2aad39.jpg"
+      },
+
+      {
+        "id": 8,
+        "city": "대전",
+        "gu": "유성구",
+        "product_name": "클래식 2407",
+        "product_type": "city",
+        "product_description": "하늘색이 아주 이쁘죠?? 민트색 같기도 해요.. 자전거안타고 요즘 걸어다녀서 누가 빌려서 써주시면 좋을것같아요^^",
+        "member": "아임캣맘",
+        "rent_day": "3",
+        "price_rent_day": "9000",
+        "img_url": "https://thumbnail7.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/abb2/459312c64bef2b761ae5785cbadbb6a033819c9365b5a86f4c387285bfb7.jpg"
+      },
+      {
+          "id": 9,
+          "city": "화성시",
+          "gu": "와우리",
+          "product_name": "알시티 엔도 24",
+          "product_type": "hybrid",
+          "product_description": "제가 수원대 다니는 학생인데 방학에 자전거를 두고가서 ... 자전거 방학동안 사용하실분 연락주세요..",
+          "member": "파이썬마스터",
+          "rent_day": "30",
+          "price_rent_day": "30000",
+          "img_url": "https://thumbnail8.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/c044/e129143a736ea6db77897cec61eaedd0fa5a1273aaaa5693daba0f0970f7.jpg"
+      }
+    ]
+} 
