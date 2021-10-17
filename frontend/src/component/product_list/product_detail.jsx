@@ -12,7 +12,7 @@ const ProductDetail = (props) => {
         .then(data => data.products)
         .then(products => {
             console.log(products);
-            const product = products.filter(item => {
+            const product = products.filter(item => { //이거는 원래 서버에서 처리해줘야함.
                 if(item.id === productId){
                     return item;
                 }

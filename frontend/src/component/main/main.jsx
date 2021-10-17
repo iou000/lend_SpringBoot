@@ -26,7 +26,7 @@ const Main = (props) => {
 
     //상품들 가져오기(상품등록 DB구현 시 경로 재작성)
     const loadProducts=() => {
-        return fetch(process.env.PUBLIC_URL + "/static/data_sample.json")
+        return fetch('api/products')
         .then(res => res.json())
     }
 
@@ -36,7 +36,7 @@ const Main = (props) => {
         //     return;
         // }
         loadProducts()
-        .then(prod => setProducts(prod["products"]))
+        .then(prod => setProducts(prod))
 
     },[]);
 

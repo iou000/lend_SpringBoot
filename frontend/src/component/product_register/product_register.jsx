@@ -81,21 +81,31 @@ function ProductRegister() {
 
         
         const fd = new FormData();
-        fd.append("product_img", productData.product_img);
-        fd.append("product_name", productData.product_name);
-        fd.append("product_type", productData.product_type);
-        fd.append("product_lend_h", productData.product_lend_h);
-        fd.append("product_lend_d", productData.product_lend_d);
-        fd.append("product_detail", productData.product_detail);
-        fd.append("product_location", productData.product_detail);
-        console.log(productData);
+        fd.append("image", productData.product_img);
+        fd.append("title", productData.product_name);
+        fd.append("type", productData.product_type);
+        fd.append("price_hour", productData.product_lend_h);
+        fd.append("price_day", productData.product_lend_d);
+        fd.append("detail", productData.product_detail);
+        fd.append("location", productData.product_location);
+
+
+
 
         axios({
             method: 'post',
-            url: '/product/',
-            data: fd,
+            url: 'api/products',
+            data: {
+                "image": '1234',
+	            "title": productData.product_name,
+	            "type": productData.product_type,
+	            "price_hour": productData.product_lend_h,
+	            "price_day": productData.product_lend_d,
+	            "detail":productData.product_detail,
+	            "location": productData.product_location
+            },
             headers: {
-                "Content-Type": "multipart/form-data",
+                "Content-Type": "application/json",
             }
         })
 
