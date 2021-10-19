@@ -19,7 +19,7 @@ public class Product extends Timestamped {
     private Long id;
 
     @Column(nullable = false) //반드시 값을 가져야 함
-    private String image;
+    private String imgURL;
 
     @Column(nullable = false)
     private String title;
@@ -41,7 +41,7 @@ public class Product extends Timestamped {
 
 
     public Product(ProductRequestDto requestDto) {
-        this.image = requestDto.getImage();
+        this.imgURL = requestDto.getImgURL();
         this.title = requestDto.getTitle();
         this.type = requestDto.getType();
         this.detail = requestDto.getDetail();

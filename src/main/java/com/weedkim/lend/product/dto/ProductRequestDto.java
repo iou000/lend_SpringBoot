@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Getter
 public class ProductRequestDto {
 
-    private String image;
+    private String imgURL;
     private String title;
     private String type;
     private String detail;

@@ -9,7 +9,7 @@ import Main from './component/main/main';
 import Search from './component/search/search';
 import ProductDetail from './component/product_list/product_detail';
 
-function App({kakaoAuthService}) {
+function App({kakaoAuthService, imageUploader}) {
   return (
     <div className={styles.app}>
       <BrowserRouter>
@@ -31,7 +31,7 @@ function App({kakaoAuthService}) {
 
           {/* 상품 등록 페이지 */}
           <Route exact path="/product_register">
-            <ProductRegister />
+            <ProductRegister imageUploader={imageUploader}/>
           </Route>
 
           {/* 카카오 로그인 페이지 */}

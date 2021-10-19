@@ -20,7 +20,7 @@ const Product = ({product}) => {
         <div className={styles.product_item}>
             <div className={styles.container} onClick={click}>
                 <div className={styles.imagesec}>
-                    <img className={styles.bycle_img} src="" alt="" />
+                    <img className={styles.bycle_img} src={product.imgURL} alt="" />
                 </div>
                 <div className={styles.descsec}>
                     <div className={styles.product_title}>

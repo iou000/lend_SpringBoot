@@ -1,7 +1,7 @@
 /*global kakao*/
 import React, {useEffect} from 'react';
 
-const KakaoAPI = (props) => {
+const KakaoAPI = ({getTextValue}) => {
 
     useEffect(() => {
         var container = document.getElementById('map'); // 지도를 표시할 div설정
@@ -41,7 +41,7 @@ const KakaoAPI = (props) => {
                         infowindow.setContent(content);
                         infowindow.open(map, marker);
 
-                        props.getTextValue(result[0].address.address_name);
+                        getTextValue(result[0].address.address_name);
                         // props.handleChange(result[0].address.address_name);
                         
                         
