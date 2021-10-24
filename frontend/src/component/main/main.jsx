@@ -24,7 +24,7 @@ const Main = (props) => {
 
 
 
-    //상품들 가져오기(상품등록 DB구현 시 경로 재작성)
+    //전체 상품 리스트 가져오기
     const loadProducts=() => {
         return fetch('api/products')
         .then(res => res.json())

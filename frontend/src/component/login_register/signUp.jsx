@@ -16,9 +16,7 @@ const SignUp = (props) => {
     });
 
     const goBack = () => {
-        history.goBack({
-            //state: 'asdf'
-        })
+        history.goBack()
     }
 
     const handleSubmit = (e) => {
@@ -41,7 +39,7 @@ const SignUp = (props) => {
             }
             axios({
                 method: 'post',
-                url: '/user/',
+                url: '/user/signup',
                 data: JSON.stringify({
                     username: signUpdata.username,
                     password: signUpdata.password,
@@ -51,11 +49,12 @@ const SignUp = (props) => {
                 headers: {
                     "Content-Type": "application/json",
                 }
-            })
-
-
-            alert(`id: ${signUpdata.username}으로 회원가입 되었습니다.`)
-            goBack();
+            }).then(res => {
+                alert(`${res.data.username}으로 회원가입 되었습니다.`)
+                goBack();
+            }).catch(error => 
+                alert(`${signUpdata.username}은 이미 존재하는 id입니다.`)
+            );
         }
     }
 
