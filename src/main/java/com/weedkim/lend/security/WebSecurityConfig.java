@@ -57,14 +57,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.authorizeRequests() //HttpServletRequest를 사용하는 요청들에 대한 접근제한을 설정.
-                .antMatchers("/static/**").permitAll()
+                .antMatchers("/static/**","/favicon.ico").permitAll()
                 .antMatchers("/h2-console/**").permitAll()
                 .antMatchers("/").permitAll()
 
                 //아래 API는 Token이 없어도 호출할 수 있도록 허용.
                 .antMatchers("/api/products").permitAll() //이거는 없애줘야함************* 무조건
-                .antMatchers("/user/login").permitAll()
                 .antMatchers("/user/signup").permitAll()
+                .antMatchers("/api/authenticate").permitAll()
                 //그 외 모든 요청은 인증과정 필요.
                 //어떤 요청이 오든 로그인 과정이 없으면 로그인을 하도록 해줌.
                 .anyRequest().authenticated()

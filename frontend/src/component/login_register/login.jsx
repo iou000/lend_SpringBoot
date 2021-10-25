@@ -1,7 +1,8 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import styles from './login.module.css';
 import { KakaoAuth } from '../../service/kakaoAuth';
+import axios from 'axios';
 
 const Login = (props) => {
     
@@ -18,6 +19,11 @@ const Login = (props) => {
             pathname: "/signUp"
         })
     }
+
+    const[loginData, setLoginData] = useState({
+        "username": '',
+        "password": '',
+    })
 
     
     // 네이버 로그인
@@ -44,6 +50,41 @@ const Login = (props) => {
         initializeNaverLogin();
         getNaverToken();
     });
+
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+
+        const arr = Object.entries(loginData);
+        for(let i = 0; i< arr.length; i++) {
+            if(arr[i][1] === "") {
+                return alert(`${arr[i][0]} 을(를) 입력해주세요.`);
+            }
+        }
+        axios({
+            method: 'post',
+            url: 'api/authenticate',
+            data: JSON.stringify({
+                username: loginData.username,
+                password: loginData.password,
+            }),
+            headers: {
+                "Content-Type": "application/json",
+            }
+
+        })
+        .then(response => console.log(response))
+        .catch(error => console(error))
+    }
+
+    const handleChange = (e) => { //요소에 변화가 생기면 실행
+        setLoginData({
+            ...loginData,
+            [e.target.name]: e.target.value,
+        })
+    }
+
+
     
     
 
@@ -58,15 +99,15 @@ const Login = (props) => {
             <div className={styles.form}>
                 <div className={styles.form_group}>
                     <label htmlFor="username">아이디</label>
-                    <input type="text" name="username" placeholder="아이디를 입력해주세요" />
+                    <input type="text" name="username" placeholder="아이디를 입력해주세요" value={loginData.username || ""} onChange={handleChange}/>
                 </div>
                 <div className={styles.form_group}>
                     <label htmlFor="password">비밀번호</label>
-                    <input type="password" name="password" placeholder="비밀번호를 입력해주세요" />
+                    <input type="password" name="password" placeholder="비밀번호를 입력해주세요" value={loginData.password || ""} onChange={handleChange}/>
                 </div>
             </div>
             <div className={styles.btns}>
-                <button className={styles.login_btn}>로그인</button>
+                <button className={styles.login_btn} onClick={handleLogin}>로그인</button>
                 <button className={styles.register_btn} onClick={goToSignUp}>회원가입</button>
             </div>
             <div className={styles.loginSeperate}>
@@ -91,7 +132,6 @@ export default Login;
 /* 
     // 콜백URL, 클라이언트 아이디 대입
     const {naver} = window;
-
     const Naver = () => {
         const naverLogin = new naver.LoginWithNaverId({
             clientId: aLUPHGNIXs0WoC2mVxqX,

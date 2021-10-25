@@ -28,7 +28,6 @@ public class UserService {
         String password = passwordEncoder.encode(requestDto.getPassword());
         String nickname = requestDto.getNickname();
         String phone = requestDto.getPhone();
-        UserRole role = UserRole.USER;
         //관리자 권한 인가
 //        if (requestDto.isAdmin()) {
 //            if (!requestDto.getAdminToken().equals(ADMIN_TOKEN)) {
@@ -37,7 +36,7 @@ public class UserService {
 //            role = UserRole.ADMIN;
 //        }
 
-        User user = new User(username, password, nickname, phone, role);
+        User user = new User(username, password, nickname, phone);
         userRepository.save(user);
         return user;
     }
