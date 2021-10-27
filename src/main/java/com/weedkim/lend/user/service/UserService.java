@@ -20,6 +20,7 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
 
+    @Transactional
     public User registerUser(SignupRequestDto requestDto) {
         // 회원 ID 중복 확인
         Optional<User> found = userRepository.findByUsername(requestDto.getUsername());

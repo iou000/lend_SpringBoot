@@ -47,7 +47,7 @@ function ProductRegister({imageUploader}) {
 
         axios({
             method: 'post',
-            url: 'api/products',
+            url: 'api/createProducts',
             data: {
                 "imgURL": productData.imgURL,
 	            "title": productData.title,
@@ -59,6 +59,7 @@ function ProductRegister({imageUploader}) {
             },
             headers: {
                 "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
             }
         })
 

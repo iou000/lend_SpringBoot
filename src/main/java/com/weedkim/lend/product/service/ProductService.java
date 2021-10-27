@@ -21,8 +21,8 @@ public class ProductService {
     }
 
     @Transactional
-    public Product createProduct(ProductRequestDto requestDto) {
-        Product product = new Product(requestDto);
+    public Product createProduct(ProductRequestDto requestDto, Long id) {
+        Product product = new Product(requestDto, id);
         productRepository.save(product);
 
         return product;

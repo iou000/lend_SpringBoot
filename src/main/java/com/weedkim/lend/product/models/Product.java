@@ -39,8 +39,11 @@ public class Product extends Timestamped {
     @Column(nullable = false)
     private int price_day;
 
+    @Column(nullable = false)
+    private Long userId;
 
-    public Product(ProductRequestDto requestDto) {
+
+    public Product(ProductRequestDto requestDto, Long userId) {
         this.imgURL = requestDto.getImgURL();
         this.title = requestDto.getTitle();
         this.type = requestDto.getType();
@@ -48,6 +51,7 @@ public class Product extends Timestamped {
         this.location = requestDto.getLocation();
         this.price_hour = requestDto.getPrice_hour();
         this.price_day = requestDto.getPrice_day();
+        this.userId = userId;
     }
 
 }
