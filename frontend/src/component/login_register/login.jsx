@@ -63,7 +63,7 @@ const Login = (props) => {
         }
         axios({
             method: 'post',
-            url: 'api/authenticate',
+            url: '/api/authenticate',
             data: JSON.stringify({
                 username: loginData.username,
                 password: loginData.password,
@@ -75,9 +75,14 @@ const Login = (props) => {
         })
         .then(response => {
             console.log(response);
+            console.log('로그인 성공')
             localStorage.setItem('ACCESS_TOKEN',response.data.token);
+            goToHome();
         })
-        .catch(error => console(error))
+        .catch(error => {
+            console.log(error)
+            console.log('로그인 실패')
+        })
     }
 
     const handleChange = (e) => { //요소에 변화가 생기면 실행

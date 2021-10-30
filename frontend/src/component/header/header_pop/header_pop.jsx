@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { getCurrentUser } from '../../../service/getCurrentUser';
 import styles from './header_pop.module.css';
 
 const HeaderPop = ({toggleMenu}) => {
@@ -18,12 +19,41 @@ const HeaderPop = ({toggleMenu}) => {
         })
     }
 
+    const[userInfo, setUserInfo] = useState({
+        'userId': '',
+        'username': '',
+        'nickname': '',
+        'phone': '',
+        'authorities': '',
+    });
+
+
     //좌측 사이드 메뉴 토글
     const onMenutoggle=(e) => {
         if(e.target.className === styles.left_pop) {
             toggleMenu();
         };
     }
+
+    useEffect(() => {
+        console.log('header_pop is Mounted')
+        getCurrentUser()
+        .then(response => {
+            setUserInfo({
+                'userId': response.data.userId,
+                'username': response.data.username,
+                'nickname': response.data.nickname,
+                'phone': response.data.phone,
+                'authorities': response.data.authorities,
+            })
+        })
+        .catch(error => {
+            console.log('로그인이 안되어있음')
+            console.log(error);
+            
+        })
+    },[])
+
 
     return (
 
@@ -41,7 +71,7 @@ const HeaderPop = ({toggleMenu}) => {
                             <button className={styles.profileImg}><i className="fas fa-user-circle"></i></button>
                         </div>
                         <div className={styles.profile_right}>
-                            <span className={styles.nickName}>닉네임</span>
+                            <span className={styles.nickName}>{userInfo.nickname}</span>
                             <button className={styles.move_profile_page}><span>내 프로필 수정 </span></button>
                         </div>
                     </div>
