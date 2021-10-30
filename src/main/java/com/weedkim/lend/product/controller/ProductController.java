@@ -7,7 +7,6 @@ import com.weedkim.lend.product.service.ProductService;
 import com.weedkim.lend.user.models.User;
 import com.weedkim.lend.user.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,9 +30,12 @@ public class ProductController {
 
     //상품 등록
     @PostMapping("api/createProducts")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public Product createProduct(@RequestBody ProductRequestDto requestDto) {
-        ResponseEntity<User> user = ResponseEntity.ok(userService.getMyUserWithAuthorities().get());
-        Long userId = user.getBody().getUserId();
+        // 현재 Security Context에 저장되어 있는 인증 정보의 username을 기준으로 한 유저 정보 및 권한 정보를 리턴
+        // 토큰을 통해 유저정보를 리턴해주는거임
+        User user = userService.getMyUserWithAuthorities().get(); //.get()은 Optional타입이라서
+        Long userId = user.getUserId();
         Product product = productService.createProduct(requestDto, userId);
         //응답
         return product;
