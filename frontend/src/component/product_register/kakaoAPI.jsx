@@ -1,7 +1,7 @@
 /*global kakao*/
 import React, {useEffect} from 'react';
 
-const KakaoAPI = ({getTextValue}) => {
+const KakaoAPI = (props) => {
 
     useEffect(() => {
         var container = document.getElementById('map'); // 지도를 표시할 div설정
@@ -25,11 +25,10 @@ const KakaoAPI = ({getTextValue}) => {
         kakao.maps.event.addListener(map, 'click', function (mouseEvent) {
                 searchDetailAddrFromCoords(mouseEvent.latLng, function (result, status) {
                     if (status === kakao.maps.services.Status.OK) {
-                        var detailAddr = !!result[0].road_address
-                            ? '<div >도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
-                        detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
+                        
+                        var detailAddr = '<div>' + result[0].address.address_name + '</div>';
 
-                        var content = '<div class="bAddr"><span class="title">당신의 주소는</span>' + detailAddr + '</div>';
+                        var content = detailAddr + '</div>';
                         //console.log(result[0].address.address_name); // 주소 텍스트 출력
                         // console.log(result[0].address);
                         // 마커를 클릭한 위치에 표시합니다
@@ -40,8 +39,11 @@ const KakaoAPI = ({getTextValue}) => {
                         // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
                         infowindow.setContent(content);
                         infowindow.open(map, marker);
+                        
+                        //주소 입력하는 input에 클릭한 위치 정보 표시
+                        document.getElementById('addressInput').value = `${result[0].address.address_name}`
 
-                        getTextValue(result[0].address.address_name);
+                        props.getTextValue(result[0].address.address_name);
                         // props.handleChange(result[0].address.address_name);
                         
                         
@@ -91,7 +93,7 @@ const KakaoAPI = ({getTextValue}) => {
                 width: "342px",
                 height: "30px",
                 margin: "0 auto",
-                padding: "3px"
+                padding: "3px",
             }}></input>
             <div
                 id="map"
@@ -99,7 +101,7 @@ const KakaoAPI = ({getTextValue}) => {
                     width: "350px",
                     height: "300px",
                     borderRadius: "5px",
-                    margin: "0 auto",
+                    margin: "2px auto",
                 }}></div>
         </div>
     )
@@ -108,24 +110,19 @@ const KakaoAPI = ({getTextValue}) => {
 export default KakaoAPI;
 
 /* geocoder.addressSearch('경기도 군포시', function(result, status) {
-
             // 정상적으로 검색이 완료됐으면
             if (status === kakao.maps.services.Status.OK) {
-
                 var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
                 // 결과값으로 받은 위치를 마커로 표시합니다
                 var marker = new kakao.maps.Marker({
                     map: map,
                     position: coords
                 });
-
                 // 인포윈도우로 장소에 대한 설명을 표시합니다
                 var infowindow = new kakao.maps.InfoWindow({
                     content: '<div style="width:150px;text-align:center;padding:6px 0;">내 주소 설정!</div>'
                 });
                 infowindow.open(map, marker);
-
                 // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
                 map.setCenter(coords);
             }

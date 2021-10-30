@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import styles from './header.module.css';
 import HeaderPop from './header_pop/header_pop';
-import HeaderSearch from './header_search/header_search';
 
-const Header = (props) => {
+const Header = ({logined}) => {
     
     const history = useHistory();
     const goToSearch = () => {
@@ -25,7 +24,7 @@ const Header = (props) => {
 
     return (
         <header className={styles.header}>
-            {isSideMenuOpen.menuOpen && <HeaderPop toggleMenu={toggleSideMenu}/>}
+            {isSideMenuOpen.menuOpen && <HeaderPop toggleMenu={toggleSideMenu} logined={logined}/>}
             
             <div className={styles.header_left}>
                 <button className={`${styles.btn} ${styles.barBtn}`} onClick={toggleSideMenu}>

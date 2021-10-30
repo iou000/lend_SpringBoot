@@ -41,7 +41,7 @@ const MyProdcut = () => {
                 <div className={styles.products}>
                     {
                         products.filter(product=> {
-                            if (searchTerm == "") {
+                            if (searchTerm === "") {
                                 return product
                             } else if (product.product_name.toLowerCase().includes(searchTerm.toLowerCase())) {
                                 return product
@@ -62,7 +62,7 @@ const MyProdcut = () => {
                 <div className={styles.products}>
                     {
                         products.filter(product=> {
-                            if (searchTerm == "") {
+                            if (searchTerm === "") {
                                 return product
                             } else if (product.product_name.toLowerCase().includes(searchTerm.toLowerCase())) {
                                 return product
