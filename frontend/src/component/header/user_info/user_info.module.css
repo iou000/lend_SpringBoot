@@ -25,12 +25,14 @@
 
 .profile_right {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
 .logoutBtn{
   font-size: 1em;
-  color: skyblue; 
+  color: skyblue;
+  cursor: pointer;
 }
 
 
