@@ -29,7 +29,7 @@ const Main = (props) => {
 
     //전체 상품 리스트 가져오기
     const loadProducts = async () => {
-        const res = await fetch('api/products');
+        const res = await fetch('/api/products');
         return await res.json();
     }
 
@@ -59,7 +59,7 @@ const Main = (props) => {
     return (
         <div className={styles.main}>
             <Header logined={logined}/>
-            <ProductList products={products} logined={logined}/>
+            <ProductList products={products}/>
             <Footer />
 
             {/* 상품등록페이지로 이동 버튼 */}

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useRef, useState } from 'react';
 import { useHistory } from 'react-router';
 import ProductList from '../product_list/product_list';
@@ -29,29 +30,19 @@ const Search = (props) => {
         inputRef.current.value = "";
     }
 
-    const onSearch = (inputText) => {
-        //console.log(inputText);
-        fetch(process.env.PUBLIC_URL + "/static/data_sample.json") // /api/search?query=검색어 로 get요청 해줘야함.
-        .then(res => res.json())
-        .then(data => data.products)
-        //data.products에 검색결과가 없다고 담겨오면
-        //messageRef.current에 검색결과가 없다고 해줘야햠.
-        .then(searchProd => {
-            // if(searchProd === "결과없음") {
-            //   messageRef.current에 검색결과가 없다고 dom을 만들어줘야함. 다시 검색했을 때도 없다는 dom이 나오면 안되니까 없애는거 먼저 써줘야함.
-            // }
-            searchProd = searchProd.filter(prod => {
-                if(prod.product_name.includes(inputText) || 
-                    prod.product_description.includes(inputText) ||
-                    prod.gu.includes(inputText)
-                    ) {
-                    return prod;
-                }
-            })
-
-            return setSearchProducts(searchProd);
+    const SearchProduct = (query) => {
+        axios({
+            method: 'get',
+            url: `/api/search/products?query=${query}`,
+            headers: {
+                "Content-Type": "application/json"
+            }
         })
-        .catch(error => console.error(error))
+        .then(prod => {
+            console.log(prod.data)
+            setSearchProducts(prod.data);
+        })
+        
     }
 
     const hideMessage = () => {
@@ -61,7 +52,7 @@ const Search = (props) => {
 
     const onSearchEnter = (e) => {
         if(e.key ==='Enter') {
-            inputText && onSearch(inputText);
+            inputText && SearchProduct(inputText);
             searchProducts && hideMessage();
         }
 
@@ -78,7 +69,7 @@ const Search = (props) => {
                     ref={inputRef}
                     className={styles.search_input}
                     type="search"
-                    placeholder="지역이나 자전거를 검색해주세요." 
+                    placeholder="원하는 자전거를 검색해주세요." 
                     onChange={onInputChange}
                     onKeyPress={onSearchEnter}/>
 

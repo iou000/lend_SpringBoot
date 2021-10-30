@@ -16,28 +16,33 @@ import java.util.List;
 @RestController
 public class ProductController {
 
-    private final ProductRepository productRepository;
     private final ProductService productService ;
     private final UserService userService;
-    //등록된 전체 상품 조회
-    @GetMapping("api/products")
-    public List<Product> getProducts() {
 
-        List<Product> product = productService.getProduct();
+    //등록된 전체 상품 조회
+    @GetMapping("/api/products")
+    public List<Product> getProducts() {
         //응답
-        return product;
+        return productService.getProduct();
+    }
+
+    //검색 상품 조회
+    @GetMapping("/api/search/products")
+    public List<Product> getSearchProducts(@RequestParam String query) {
+       //응답
+       return productService.getSearchProduct(query);
     }
 
     //상품 등록
-    @PostMapping("api/createProducts")
+    @PostMapping("/api/createProducts")
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public Product createProduct(@RequestBody ProductRequestDto requestDto) {
         // 현재 Security Context에 저장되어 있는 인증 정보의 username을 기준으로 한 유저 정보 및 권한 정보를 리턴
         // 토큰을 통해 유저정보를 리턴해주는거임
         User user = userService.getMyUserWithAuthorities().get(); //.get()은 Optional타입이라서
         Long userId = user.getUserId();
-        Product product = productService.createProduct(requestDto, userId);
         //응답
-        return product;
+        return productService.createProduct(requestDto, userId);
     }
+
 }

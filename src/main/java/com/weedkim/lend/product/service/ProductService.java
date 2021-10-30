@@ -20,6 +20,12 @@ public class ProductService {
         return productRepository.findAll();
     }
 
+    //검색 상품 받아오기
+    public List<Product> getSearchProduct(String query) {
+        return productRepository.findAllByTitleContaining(query);
+    }
+
+    //상품 등록
     @Transactional
     public Product createProduct(ProductRequestDto requestDto, Long id) {
         Product product = new Product(requestDto, id);
