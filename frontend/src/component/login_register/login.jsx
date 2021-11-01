@@ -112,13 +112,12 @@ const Login = (props) => {
                     <label htmlFor="password">비밀번호</label>
                     <input type="password" name="password" placeholder="비밀번호를 입력해주세요" value={loginData.password || ""} onChange={handleChange}/>
                 </div>
-            </div>
-            <div className={styles.btns}>
-                <button className={styles.login_btn} onClick={handleLogin}>로그인</button>
+                <div className={styles.btns}>
                 <button className={styles.register_btn} onClick={goToSignUp}>회원가입</button>
+                <button className={styles.login_btn} onClick={handleLogin}>로그인</button>
+            </div>
             </div>
             <div className={styles.loginSeperate}>
-                <hr />
             </div>
             <div className={styles.login_sns}>
                 <div id="naverIdLogin" className={styles.login_sns}></div>  

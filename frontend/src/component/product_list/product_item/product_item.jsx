@@ -6,7 +6,7 @@ const Product = ({product}) => {
         
     const history = useHistory();
 
-    const click = () => {
+    const onProductClick = () => {
         history.push({
             pathname: `product/${product.id}`,
             props: product.id
@@ -14,25 +14,33 @@ const Product = ({product}) => {
         })
     }
 
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
 
 
     return (
         <div className={styles.product_item}>
-            <div className={styles.container} onClick={click}>
+            <div className={styles.container} onClick={onProductClick}>
+                {/* 이미지 영역 */}
                 <div className={styles.imagesec}>
-                    <img className={styles.bycle_img} src={product.imgURL} alt="" />
+                    <img className={styles.product_img} src={product.imgURL} alt="" />
                 </div>
-                <div className={styles.descsec}>
-                    <div className={styles.product_title}>
-                        <span>{product.title}</span>
+                <div className={styles.product_detail}>
+                    {/* 상품 설명 */}
+                    <div className={styles.descsec}>
+                        <div className={styles.product_title}>
+                            <span>{product.title}</span>
+                        </div>
+                        <div className={styles.product_location}>
+                            <span>{product.location}</span>
+                        </div>
                     </div>
-                    <div className={styles.product_desc}>
-                        <span>{product.detail}</span>
-                    </div>
+                    {/* 가격 */}
                     <div className={styles.product_price}>
-                        <span className={styles.product_seller}>지역 : {product.location} </span>
-                        <span>가격: {product.price_hour}일 / </span>
-                        <span>{product.price_day}원</span>
+                            <span>{numberWithCommas(product.price_hour)}원 (1시간) / </span>
+                            <span>{numberWithCommas(product.price_day)}원 (1일)</span>
                     </div>
                 </div>
             </div>

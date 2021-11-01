@@ -100,6 +100,9 @@
     width: 89%;
     font-weight: bold;
 }
+.productName:focus {
+    outline: 1px solid skyblue;
+}
 
 /* 자전거 종류 */
 .bikeStyle {
@@ -113,6 +116,10 @@
     background-color: #f3f3f3;
 }
 
+.bikeStyle:focus {
+    outline: 1px solid skyblue;
+}
+
 /* 상품 가격 */
 .priceDiv {
     display: flex;
@@ -120,6 +127,14 @@
 .productDayPrice,
 .productHourPrice {
     min-width: 30px;
+}
+
+.productDayPrice:focus {
+    outline: 1px solid skyblue;
+}
+
+.productHourPrice:focus {
+    outline: 1px solid skyblue;
 }
 
 /* 상품 상세설명 */
@@ -136,6 +151,9 @@
     resize: none;
     padding: 3px 10px;
 } 
+.productDesc:focus {
+    outline: 1px solid skyblue;
+}
 
 /* 상품 제출 */
 .product_submit {

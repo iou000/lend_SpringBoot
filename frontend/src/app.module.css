@@ -4,12 +4,19 @@ button {
 }
 
 .app {
+  width: 100%;
   margin: 0 auto;
 }
 
 /* 반응형 | 미디어 쿼리 */
-@media screen and (max-width: 20000px) {
+@media screen and (min-width: 720px) {
   .app {
     width: 375px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .app {
+    width: 100%;
   }
 }

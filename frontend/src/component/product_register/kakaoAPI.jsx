@@ -94,6 +94,8 @@ const KakaoAPI = (props) => {
                 height: "30px",
                 margin: "0 auto",
                 padding: "3px",
+                outline: "none",
+                border: "1px solid skyblue",
             }}></input>
             <div
                 id="map"

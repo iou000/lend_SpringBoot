@@ -100,15 +100,14 @@ input {
 /* 버튼 박스 */
 .btns {
   display: flex;
-  flex-direction: row-reverse;
-  width: 100%;
+  justify-content: end;
+  width: 308px;
 }
 
 /* 로그인 버튼 */
 .login_btn {
   font-size: 13px;
   padding: 5px 20px;
-  margin-right: 20px;
   background-color: skyblue;
   color: #fff;
   border-radius: 3px;
@@ -137,8 +136,10 @@ input {
 }
 
 .loginSeperate {
-  width: 100%;
-  margin-top: 15px;
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 2.5rem;
+  border-bottom: 1px solid lightgray;
 }
 
 /* SNS로그인 */
