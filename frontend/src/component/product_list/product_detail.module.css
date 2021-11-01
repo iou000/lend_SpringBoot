@@ -1,0 +1,168 @@
+.container {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+/* 헤더 */
+.header {
+    width: 100%;
+    height: 3.2rem;
+    display: flex;
+    flex-direction: row;
+    background-color: skyblue;
+}
+
+  /* 뒤로가기 버튼 */
+.goBackBtn {
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 8px;
+    left: 4px;
+}
+
+.imgBox {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.product_img {
+    width: 100%;
+}
+
+.product_info {
+    display: flex;
+    flex-direction: column;
+    margin:  0 0.5rem;
+}
+
+.userBox {
+    display: flex;
+    width: 100%;
+    height: 56px;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+}
+
+.profile_left {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-right: 0.8rem;
+    padding-bottom: 0.2rem;
+}
+
+.profileImg {
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 2.5rem;
+    color: darkgray;
+    cursor: pointer;
+}
+
+.product_nickneme {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem;
+}
+.product_nickneme span {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.product_detail {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid lightgray;
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.product_title {
+    width: 100%;
+    height: 30px;
+}
+
+.product_title > span {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+
+.location {
+    color: gray;
+}
+
+.product_description {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+
+/* 댓글 */
+.commentBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 24px;
+}
+
+.commentForm {
+    display: flex;
+    width: 100%;
+    padding: 6px 0;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.commentInput {
+    width: 70%;
+    height: 60px;
+    resize: none;
+    border-radius: 6px;
+    border: 1px solid lightgray;
+    padding: 0.2rem;
+}
+
+.commentInput:focus {
+    outline: none;
+    border-color: skyblue;
+  }
+
+.commentSubmit {
+    width: 20%;
+    height: 36px;
+    font-size: 0.7em;
+    font-weight: 600;
+    background-color: skyblue;
+    color: whitesmoke;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.comment {
+    width: 100%;
+    height: 60px;
+    margin: 6px 0;
+    background-color: darkgreen;
+}
+
+
+
+
+
+
+/* 스크롤바 디자인 */
+.container::-webkit-scrollbar {
+    width: 0.15em;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 1em;
+}

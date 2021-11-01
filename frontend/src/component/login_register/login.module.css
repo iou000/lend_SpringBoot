@@ -100,7 +100,7 @@ input {
 /* 버튼 박스 */
 .btns {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   width: 308px;
 }
 

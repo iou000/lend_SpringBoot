@@ -15,11 +15,9 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class) // 변경되었을 때 자동으로 기록.
 public abstract class Timestamped { //어차피 상속받아서만 사용할거니까 좀 더 명시적으로 abstract class로 선언.
 
-    @JsonIgnore
     @CreatedDate // 최초 생성 시점
     private LocalDateTime createdAt;
 
-    @JsonIgnore
     @LastModifiedDate // 마지막 변경 시점
     private LocalDateTime modifiedAt;
 }

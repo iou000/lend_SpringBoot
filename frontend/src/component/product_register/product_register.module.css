@@ -44,18 +44,22 @@
 
 /* Content */
 .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     height: 93%;
     display: flex;
     background-color: white;
-    flex-direction: column;
-    align-items: center;
     overflow: scroll;
     overflow-x: hidden;
 }
 
 /* 사진 추가 */
 .product_photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 180px;
     margin-bottom: 20px;
@@ -74,8 +78,7 @@
     border-radius: 5px;
     box-shadow: 2px 2px 3px #999;
     cursor: pointer;
-    margin-top: 40px;
-    margin-left: 130px;
+    margin-top: 1rem;
 }
 
 /* 내용 추가 */
@@ -107,7 +110,7 @@
 /* 자전거 종류 */
 .bikeStyle {
     margin: 6px 10px;
-    width: 22em;
+    width: 94%;
     height: 36px;
     border: 0;
     border-radius: 4px;
@@ -140,7 +143,7 @@
 /* 상품 상세설명 */
 .productDesc {
     min-height: 210px;
-    width: 89%;
+    width: 90%;
     height: 36px;
     font-size: 16px;
     border: 0;
@@ -160,7 +163,8 @@
     display: flex;
     width: 100%;
     height: 30%;
-    margin-top: 10px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 .submitBtn {
