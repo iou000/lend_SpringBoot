@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
     //검색어(제목)를 포함한 상품 조회
-    List<Product> findAllByTitleContaining(String title);
+    List<Product> findAllByTitleContainingIgnoreCase(String title);
 }

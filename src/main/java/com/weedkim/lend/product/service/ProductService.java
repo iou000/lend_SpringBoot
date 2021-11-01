@@ -23,7 +23,7 @@ public class ProductService {
 
     //검색 상품 받아오기
     public List<Product> getSearchProduct(String query) {
-        return productRepository.findAllByTitleContaining(query);
+        return productRepository.findAllByTitleContainingIgnoreCase(query);
     }
 
     //상품 등록
