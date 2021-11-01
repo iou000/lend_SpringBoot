@@ -4,6 +4,7 @@ import com.weedkim.lend.product.dto.ProductRequestDto;
 import com.weedkim.lend.product.models.Product;
 import com.weedkim.lend.product.models.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -17,7 +18,7 @@ public class ProductService {
 
     //모든 상품 받아오기
     public List<Product> getProduct() {
-        return productRepository.findAll();
+        return productRepository.findAll(Sort.by(Sort.Direction.DESC,"id"));
     }
 
     //검색 상품 받아오기

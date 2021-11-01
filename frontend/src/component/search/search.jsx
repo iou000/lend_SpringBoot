@@ -31,18 +31,13 @@ const Search = (props) => {
     }
 
     const SearchProduct = (query) => {
-        axios({
+        return axios({
             method: 'get',
             url: `/api/search/products?query=${query}`,
             headers: {
                 "Content-Type": "application/json"
             }
         })
-        .then(prod => {
-            console.log(prod.data)
-            setSearchProducts(prod.data);
-        })
-        
     }
 
     const hideMessage = () => {
@@ -52,9 +47,21 @@ const Search = (props) => {
 
     const onSearchEnter = (e) => {
         if(e.key ==='Enter') {
-            inputText && SearchProduct(inputText);
-            searchProducts && hideMessage();
+            inputText && 
+            SearchProduct(inputText)
+            .then(prod => {
+                if(prod.data.length === 0){
+                    messageRef.current.innerHTML="<h2>검색 결과가 없습니당.</h2>"
+                    messageRef.current.style="display:block;";
+                    setSearchProducts(prod.data);
+                }
+                else {
+                    hideMessage();
+                    setSearchProducts(prod.data);
+                }
+            });
         }
+        
 
     }
 
