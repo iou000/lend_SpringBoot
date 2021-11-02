@@ -1,6 +1,7 @@
 package com.weedkim.lend.user.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.weedkim.lend.product.models.Product;
 import com.weedkim.lend.product.models.Timestamped;
 import lombok.*;
 

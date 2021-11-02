@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -26,10 +27,16 @@ public class ProductService {
         return productRepository.findAllByTitleContainingIgnoreCase(query);
     }
 
+    public Product getProduct(Long id) {
+        return productRepository.findById(id).orElseThrow(
+                () -> new NullPointerException("해상 상품이 존재하지 않습니다.")
+        );
+    }
+
     //상품 등록
     @Transactional
-    public Product createProduct(ProductRequestDto requestDto, Long id) {
-        Product product = new Product(requestDto, id);
+    public Product createProduct(ProductRequestDto requestDto, Long id, String postUserNickname) {
+        Product product = new Product(requestDto, id, postUserNickname);
         productRepository.save(product);
 
         return product;

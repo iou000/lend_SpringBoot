@@ -2,7 +2,6 @@ package com.weedkim.lend.product.controller;
 
 import com.weedkim.lend.product.dto.ProductRequestDto;
 import com.weedkim.lend.product.models.Product;
-import com.weedkim.lend.product.models.ProductRepository;
 import com.weedkim.lend.product.service.ProductService;
 import com.weedkim.lend.user.models.User;
 import com.weedkim.lend.user.service.UserService;
@@ -33,6 +32,14 @@ public class ProductController {
        return productService.getSearchProduct(query);
     }
 
+    //상품 상세
+    @GetMapping("/api/product/{id}")
+    public Product getProduct(@PathVariable Long id) {
+        //응답
+        return productService.getProduct(id);
+    }
+
+
     //상품 등록
     @PostMapping("/api/createProducts")
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
@@ -41,8 +48,9 @@ public class ProductController {
         // 토큰을 통해 유저정보를 리턴해주는거임
         User user = userService.getMyUserWithAuthorities().get(); //.get()은 Optional타입이라서
         Long userId = user.getUserId();
+        String postUserNickname = user.getNickname();
         //응답
-        return productService.createProduct(requestDto, userId);
+        return productService.createProduct(requestDto, userId, postUserNickname);
     }
 
 }

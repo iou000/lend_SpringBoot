@@ -1,6 +1,7 @@
 package com.weedkim.lend.product.models;
 
 import com.weedkim.lend.product.dto.ProductRequestDto;
+import com.weedkim.lend.user.models.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,6 +15,7 @@ import javax.persistence.*;
 public class Product extends Timestamped {
 
     // ID 자동 생성 및 증가
+    @Column(name = "product_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long id;
@@ -42,8 +44,11 @@ public class Product extends Timestamped {
     @Column(nullable = false)
     private Long userId;
 
+    @Column(nullable = false)
+    private String postUserNickname;
 
-    public Product(ProductRequestDto requestDto, Long userId) {
+
+    public Product(ProductRequestDto requestDto, Long userId, String postUserNickname) {
         this.imgURL = requestDto.getImgURL();
         this.title = requestDto.getTitle();
         this.type = requestDto.getType();
@@ -52,6 +57,7 @@ public class Product extends Timestamped {
         this.price_hour = requestDto.getPrice_hour();
         this.price_day = requestDto.getPrice_day();
         this.userId = userId;
+        this.postUserNickname = postUserNickname;
     }
 
 }

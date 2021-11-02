@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './product_detail.module.css';
@@ -10,7 +11,18 @@ const ProductDetail = (props) => {
     }
 
 
-    const[product,setProduct] = useState({});
+    const[product,setProduct] = useState({
+        "product_id": '',
+        "title": '',
+        "location": '',
+        "detail": '',
+        "imgURL": '',
+        "price_hour": '',
+        "price_day": '',
+        "type": '',
+        "userId": '',
+        "postUserNickname": '',
+    });
 
     const[comment,setComment] = useState('');
 
@@ -28,26 +40,31 @@ const ProductDetail = (props) => {
 
     useEffect(() => {
 
-        const productId = parseInt(window.location.pathname.substr(window.location.pathname.lastIndexOf('/')+1));
-        fetch(process.env.PUBLIC_URL + "/static/data_sample.json") // /api/search/{productId} 로 get요청 해줘야함.
-        .then(res => res.json())
-        .then(data => data.products)
-        .then(products => {
-            const product = products.filter(item => { //서버에서 처리해줘야함.
-                if(item.id === productId){
-                    return item;
-                }
-            })
-            setProduct(product[0]);
+        console.log(history.location.props)
+        axios({
+            method: 'get',
+            url: `/api/product/${history.location.props}`,
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
+            }
         })
-
-        // axios({
-        //     method: 'get',
-        //     url: `api/product/${productId}`,
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     }
-        // })
+        .then( res => {
+            console.log(res);
+            setProduct({
+                "product_id": res.data.id,
+                "title": res.data.title,
+                "location": res.data.location,
+                "detail": res.data.detail,
+                "imgURL": res.data.imgURL,
+                "price_hour": res.data.price_hour,
+                "price_day": res.data.price_day,
+                "type": res.data.type,
+                "userId": res.data.userId,
+                "postUserNickname": res.data.postUserNickname,
+            })
+        })
+        
         
     },[])
 
@@ -58,7 +75,7 @@ const ProductDetail = (props) => {
                 <button onClick={goBack} className={styles.goBackBtn}><i className="fas fa-arrow-left"></i></button>
                     <img 
                         className={styles.product_img}
-                        src="https://res.cloudinary.com/diuhf2vfm/image/upload/v1635780568/1_3_rifgok.jpg" 
+                        src={product.imgURL}
                         alt="" 
                     />
                 </div>
@@ -69,19 +86,20 @@ const ProductDetail = (props) => {
                     <button className={styles.profileImg}><i className="fas fa-user-circle"></i></button>
                 </div>
                 <div className={styles.product_nickneme}>
-                    <span>{product.member}</span>
+                    {/* 닉네임으로 바꿔줘야함 */}
+                    <span>{product.postUserNickname}</span>
                 </div>
                 </header>
                 {/* 상품 정보 */}
                 <section className={styles.product_detail}>
                     <div className={styles.product_title}>
-                        <span>{product.product_name}</span>
+                        <span>{product.title}</span>
                     </div>
                     <div className={styles.location}>
-                        <span>{product.gu}</span>
+                        <span>{product.location}</span>
                     </div>
                     <div className={styles.product_description}>
-                        <span>{product.product_description}</span>
+                        <span>{product.detail}</span>
                     </div>
                 </section>
                 {/* 댓글 */}
