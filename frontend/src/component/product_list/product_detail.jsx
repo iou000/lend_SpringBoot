@@ -103,41 +103,79 @@ const ProductDetail = (props) => {
                     </div>
                 </section>
                 {/* 댓글 */}
-                <div className={styles.commentBox}>
+                <div className={styles.commentInputBox}>
                     <form className={styles.commentForm} onSubmit={handleSubmit}>
-                        <textarea className={styles.commentInput} name="comment" type="text" placeholder="aaaaa" 
+                        <textarea className={styles.commentInput} name="comment" type="text" placeholder="댓글을 입력해 주세요." 
                         value={comment} onChange={handleChange}/>
                         <button className={styles.commentSubmit}>댓글쓰기</button>
                     </form>
+                    {/* 댓글리스트 컴포넌트로 만들어줘야함 */}
+                    <div className={styles.commentList}>
+                        {/* 댓글 컴포넌트로 만들어줘야함*/}
+                        <div className={styles.commentItem}>
+                            <div className={styles.commentWriter}>
+                                댓글 작성자
+                            </div>
+                            <div className={styles.comment}>
+                                <div className={styles.commentData}>
+                                댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
+                                </div>
+                            <div className={styles.commentUpdate}>
+                                <button className={styles.commentUpdateBtn}> 수정</button>
+                                <button className={styles.commentDeleteBtn}> 삭제</button>
+                            </div>
+                            </div>
+                        </div>
 
-                    <div className={styles.comment}>
-                        sadasd
-                    </div>
-                    
-                    <div className={styles.comment}>
-                        sadasd
-                    </div>
-                    
-                    <div className={styles.comment}>
-                        sadasd
-                    </div>
-                    
-                    <div className={styles.comment}>
-                        sadasd
-                    </div>
-                    
-                    <div className={styles.comment}>
-                        sadasd
-                    </div>
-                    
-                    <div className={styles.comment}>
-                        sadasd
-                    </div>
-                    
+                        <div className={styles.commentItem}>
+                            <div className={styles.commentWriter}>
+                                댓글 작성자
+                            </div>
+                            <div className={styles.comment}>
+                                <div className={styles.commentData}>
+                                댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
+                                </div>
+                            <div className={styles.commentUpdate}>
+                                <button className={styles.commentUpdateBtn}> 수정</button>
+                                <button className={styles.commentDeleteBtn}> 삭제</button>
+                            </div>
+                            </div>
+                        </div>
 
+                        <div className={styles.commentItem}>
+                            <div className={styles.commentWriter}>
+                                댓글 작성자
+                            </div>
+                            <div className={styles.comment}>
+                                <div className={styles.commentData}>
+                                댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
+                                </div>
+                            <div className={styles.commentUpdate}>
+                                <button className={styles.commentUpdateBtn}> 수정</button>
+                                <button className={styles.commentDeleteBtn}> 삭제</button>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div className={styles.commentItem}>
+                            <div className={styles.commentWriter}>
+                                댓글 작성자
+                            </div>
+                            <div className={styles.comment}>
+                                <div className={styles.commentData}>
+                                댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글댓글
+                                </div>
+                            {/* 해당하는 userId에서만 보이게해줘야함. */}
+                            <div className={styles.commentUpdate}>
+                                <button className={styles.commentUpdateBtn}> 수정</button>
+                                <button className={styles.commentDeleteBtn}> 삭제</button>
+                            </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-
-                </div>
+            </div>
         </div>
 
     );

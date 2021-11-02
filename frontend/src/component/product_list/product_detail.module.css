@@ -28,11 +28,14 @@
   width: 100%;
   text-align: center;
   position: relative;
+  
 }
 
 .product_img {
   width: 100%;
   height: 250px;
+  
+  border-bottom: 1px solid lightgray;
 }
 
 .product_info {
@@ -85,7 +88,6 @@
 
 .product_title {
   width: 100%;
-  height: 30px;
   font-size: 1.4em;
   margin-bottom: 6px;
 }
@@ -105,7 +107,7 @@
 }
 
 /* 댓글 */
-.commentBox {
+.commentInputBox {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -146,12 +148,57 @@
   cursor: pointer;
 }
 
-.comment {
-  width: 100%;
-  height: 60px;
-  margin: 6px 0;
-  background-color: darkgreen;
+.commentList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0.4rem auto;
 }
+
+.commentItem {
+  border-bottom: 1px solid lightgray;
+  padding: 0.2rem 0.6rem;
+}
+
+.commentWriter {
+    padding: 0.2rem 0;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.commentData {
+    width: 100%;
+    font-size: 0.8em;
+}
+
+.commentUpdate {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.commentUpdateBtn {
+    width: 32px;
+    font-size: 0.7em;
+    color: rgb(68, 79, 240);
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.commentDeleteBtn {
+    width: 32px;
+    font-size: 0.7em;
+    color: rgb(255, 76, 52);
+    border-radius: 6px;
+    padding: 2px;
+}
+
+
 
 /* 스크롤바 디자인 */
 .container::-webkit-scrollbar {
