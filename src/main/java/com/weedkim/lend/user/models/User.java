@@ -43,7 +43,6 @@ public class User extends Timestamped {
     @Column(name = "activated")
     private boolean activated;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Comment> comments;
 

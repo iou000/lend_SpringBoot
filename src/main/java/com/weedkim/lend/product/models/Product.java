@@ -3,6 +3,7 @@ package com.weedkim.lend.product.models;
 import com.weedkim.lend.comment.models.Comment;
 import com.weedkim.lend.product.dto.ProductRequestDto;
 import com.weedkim.lend.user.models.User;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +14,8 @@ import java.util.List;
 @Setter
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "product")
 @Entity
 public class Product extends Timestamped {
 
@@ -49,7 +52,7 @@ public class Product extends Timestamped {
     @Column(nullable = false)
     private String postUserNickname;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     private List<Comment> comments;
 
 

@@ -25,7 +25,7 @@ public class Comment extends Timestamped {
     @Column(name = "comment_id")
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private String content;
 
     @JsonIgnore
@@ -34,7 +34,7 @@ public class Comment extends Timestamped {
     private User user;
 
     @JsonIgnore
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
 

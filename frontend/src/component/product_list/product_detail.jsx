@@ -34,9 +34,10 @@ const ProductDetail = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(comment);
+        console.log(product.product_id)
         axios({
             method: 'post',
-            url: `/api/product/${history.location.props}/comment`,
+            url: `/api/product/${product.product_id}/comment`,
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`

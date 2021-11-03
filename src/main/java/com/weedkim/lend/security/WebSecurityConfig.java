@@ -67,6 +67,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/signup").permitAll()
                 .antMatchers("/api/authenticate").permitAll()
                 .antMatchers("/api/search/products").permitAll()
+                .antMatchers("/api/product/{id}").permitAll()
 
                 //그 외 모든 요청은 인증과정 필요.
                 //어떤 요청이 오든 로그인 과정이 없으면 로그인을 하도록 해줌.
