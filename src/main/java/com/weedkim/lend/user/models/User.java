@@ -1,11 +1,13 @@
 package com.weedkim.lend.user.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.weedkim.lend.comment.models.Comment;
 import com.weedkim.lend.product.models.Product;
 import com.weedkim.lend.product.models.Timestamped;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Builder
@@ -40,6 +42,10 @@ public class User extends Timestamped {
     @JsonIgnore
     @Column(name = "activated")
     private boolean activated;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Comment> comments;
 
     @ManyToMany
     @JoinTable(

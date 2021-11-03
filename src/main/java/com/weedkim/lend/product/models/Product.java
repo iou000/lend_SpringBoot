@@ -1,5 +1,6 @@
 package com.weedkim.lend.product.models;
 
+import com.weedkim.lend.comment.models.Comment;
 import com.weedkim.lend.product.dto.ProductRequestDto;
 import com.weedkim.lend.user.models.User;
 import lombok.Getter;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Setter
 @Getter
@@ -46,6 +48,9 @@ public class Product extends Timestamped {
 
     @Column(nullable = false)
     private String postUserNickname;
+
+    @OneToMany(mappedBy = "product")
+    private List<Comment> comments;
 
 
     public Product(ProductRequestDto requestDto, Long userId, String postUserNickname) {

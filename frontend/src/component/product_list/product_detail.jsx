@@ -33,8 +33,19 @@ const ProductDetail = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        //댓글 axios
+        console.log(comment);
+        axios({
+            method: 'post',
+            url: `/api/product/${history.location.props}/comment`,
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
+            },
+            data: {
+                "content": comment,
+            }
+        })
+        .then(res => console.log(res))
     }
 
 
@@ -67,6 +78,8 @@ const ProductDetail = (props) => {
         
         
     },[])
+
+
 
     return (
         <div className={styles.container}>
@@ -104,11 +117,6 @@ const ProductDetail = (props) => {
                 </section>
                 {/* 댓글 */}
                 <div className={styles.commentInputBox}>
-                    <form className={styles.commentForm} onSubmit={handleSubmit}>
-                        <textarea className={styles.commentInput} name="comment" type="text" placeholder="댓글을 입력해 주세요." 
-                        value={comment} onChange={handleChange}/>
-                        <button className={styles.commentSubmit}>댓글쓰기</button>
-                    </form>
                     {/* 댓글리스트 컴포넌트로 만들어줘야함 */}
                     <div className={styles.commentList}>
                         {/* 댓글 컴포넌트로 만들어줘야함*/}
@@ -172,6 +180,12 @@ const ProductDetail = (props) => {
                             </div>
                             </div>
                         </div>
+
+                        <form className={styles.commentForm} onSubmit={handleSubmit}>
+                            <textarea className={styles.commentInput} name="comment" type="text" placeholder="댓글을 입력해 주세요." 
+                            value={comment} onChange={handleChange}/>
+                            <button className={styles.commentSubmit}>댓글쓰기</button>
+                        </form>
 
                     </div>
                 </div>
