@@ -1,5 +1,7 @@
 package com.weedkim.lend.product.models;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.weedkim.lend.comment.models.Comment;
 import com.weedkim.lend.product.dto.ProductRequestDto;
 import com.weedkim.lend.user.models.User;
@@ -17,6 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 @Table(name = "product")
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "id")
 public class Product extends Timestamped {
 
     // ID 자동 생성 및 증가

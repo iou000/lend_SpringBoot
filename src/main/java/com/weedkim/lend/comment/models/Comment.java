@@ -1,6 +1,8 @@
 package com.weedkim.lend.comment.models;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.weedkim.lend.comment.dto.CommentRequestDto;
 import com.weedkim.lend.product.models.Product;
 import com.weedkim.lend.product.models.Timestamped;
@@ -18,6 +20,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "id")
 public class Comment extends Timestamped {
 
     @Id
@@ -28,12 +31,10 @@ public class Comment extends Timestamped {
     @Column(nullable = false)
     private String content;
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
