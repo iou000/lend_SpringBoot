@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import CommentList from '../comment/comment_list';
 import styles from './product_detail.module.css';
@@ -11,7 +11,7 @@ const ProductDetail = (props) => {
         history.goBack();
     }
 
-
+    //상품 정보
     const[product,setProduct] = useState({
         "product_id": '',
         "title": '',
@@ -24,18 +24,20 @@ const ProductDetail = (props) => {
         "userId": '',
         "postUserNickname": '',
     });
+    
+    //상품에 달린 댓글 정보
+    const[comments,setComments] = useState([]);
 
-    const[commentInput,setCommentInput] = useState('');
+
+    const[commentInputText,setCommentInputText] = useState('');
 
 
     const commentChange = (e) => {
-        setCommentInput(e.target.value)
-    }
+        setCommentInputText(e.target.value)
+    };
 
     const commentSubmit = (e) => {
         e.preventDefault();
-        console.log(commentInput);
-        console.log(product.product_id)
         axios({
             method: 'post',
             url: `/api/product/${product.product_id}/comment`,
@@ -44,16 +46,15 @@ const ProductDetail = (props) => {
                 "Authorization": `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
             },
             data: {
-                "content": commentInput,
+                "content": commentInputText,
             }
         })
-        .then(res => console.log(res))
-    }
+        .then(res => alert('댓글 작성 성공!!'))
+        .catch(error => alert('댓글 작성 실패..'))
+    };
 
 
     useEffect(() => {
-
-        console.log(history.location.props)
         axios({
             method: 'get',
             url: `/api/product/${history.location.props}`,
@@ -62,8 +63,7 @@ const ProductDetail = (props) => {
                 "Authorization": `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
             }
         })
-        .then( res => {
-            console.log(res.data);
+        .then(res => {
             setProduct({
                 "product_id": res.data.id,
                 "title": res.data.title,
@@ -75,8 +75,10 @@ const ProductDetail = (props) => {
                 "type": res.data.type,
                 "userId": res.data.userId,
                 "postUserNickname": res.data.postUserNickname,
-            })
+            });
+            setComments(res.data.comments)
         })
+
         
         
     },[])
@@ -100,7 +102,7 @@ const ProductDetail = (props) => {
                         <div className={styles.profile_left}>
                             <button className={styles.profileImg}><i className="fas fa-user-circle"></i></button>
                         </div>
-                        <div className={styles.product_nickneme}>
+                        <div className={styles.postUser_nickneme}>
                             {/* 닉네임으로 바꿔줘야함 */}
                             <span>{product.postUserNickname}</span>
                         </div>
@@ -118,8 +120,15 @@ const ProductDetail = (props) => {
                     </div>
                 </section>
                 </div>
+
                 {/* 댓글 */}
-                <CommentList commentInput={commentInput} commentChange={commentChange} commentSubmit={commentSubmit}/>
+                <CommentList comments={comments}/>
+                {/* 댓글 입력 폼 */}
+                <form className={styles.commentForm} onSubmit={commentSubmit}>
+                    <textarea className={styles.commentInput} name="comment" type="text" placeholder="댓글을 입력해 주세요." 
+                    value={commentInputText} onChange={commentChange}/>
+                    <button className={styles.commentSubmitBtn}>댓글쓰기</button>
+                </form>
         </div>
 
     );
