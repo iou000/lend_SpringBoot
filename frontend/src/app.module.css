@@ -8,6 +8,12 @@ button {
   margin: 0 auto;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* 반응형 | 미디어 쿼리 */
 @media screen and (min-width: 720px) {
   .app {

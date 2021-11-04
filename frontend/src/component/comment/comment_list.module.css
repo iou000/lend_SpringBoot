@@ -1,0 +1,91 @@
+/* 댓글 */
+.commentInputBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 24px;
+}
+
+.commentForm {
+  display: flex;
+  width: 100%;
+  padding: 6px 0;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.commentInput {
+  width: 70%;
+  height: 60px;
+  resize: none;
+  border-radius: 6px;
+  border: 1px solid lightgray;
+  padding: 0.2rem;
+}
+
+.commentInput:focus {
+  outline: none;
+  border-color: skyblue;
+}
+
+.commentSubmitBtn {
+  width: 20%;
+  height: 36px;
+  font-size: 0.7em;
+  font-weight: 600;
+  background-color: skyblue;
+  color: whitesmoke;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.commentList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0.4rem auto;
+}
+
+.commentItem {
+  border-bottom: 1px solid lightgray;
+  padding: 0.2rem 0.6rem;
+}
+
+.commentWriter {
+  padding: 0.2rem 0;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.commentData {
+  width: 100%;
+  font-size: 0.8em;
+}
+
+.commentUpdate {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.commentUpdateBtn {
+  width: 32px;
+  font-size: 0.7em;
+  color: rgb(68, 79, 240);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.commentDeleteBtn {
+  width: 32px;
+  font-size: 0.7em;
+  color: rgb(255, 76, 52);
+  border-radius: 6px;
+  padding: 2px;
+}
