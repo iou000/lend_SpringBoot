@@ -28,11 +28,11 @@ const ProductDetail = (props) => {
     const[commentInput,setCommentInput] = useState('');
 
 
-    const handleChange = (e) => {
+    const commentChange = (e) => {
         setCommentInput(e.target.value)
     }
 
-    const handleSubmit = (e) => {
+    const commentSubmit = (e) => {
         e.preventDefault();
         console.log(commentInput);
         console.log(product.product_id)
@@ -63,7 +63,7 @@ const ProductDetail = (props) => {
             }
         })
         .then( res => {
-            console.log(res);
+            console.log(res.data);
             setProduct({
                 "product_id": res.data.id,
                 "title": res.data.title,
@@ -119,7 +119,7 @@ const ProductDetail = (props) => {
                 </section>
                 </div>
                 {/* 댓글 */}
-                <CommentList commentInput={commentInput} commentChange={handleChange} commentSubmit={handleSubmit}/>
+                <CommentList commentInput={commentInput} commentChange={commentChange} commentSubmit={commentSubmit}/>
         </div>
 
     );

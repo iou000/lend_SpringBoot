@@ -1,0 +1,41 @@
+.commentItem {
+  border-bottom: 1px solid lightgray;
+  padding: 0.2rem 0.6rem;
+}
+
+.commentWriter {
+  padding: 0.2rem 0;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.commentData {
+  width: 100%;
+  font-size: 0.8em;
+}
+
+.commentUpdate {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.commentUpdateBtn {
+  width: 32px;
+  font-size: 0.7em;
+  color: rgb(68, 79, 240);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.commentDeleteBtn {
+  width: 32px;
+  font-size: 0.7em;
+  color: rgb(255, 76, 52);
+  border-radius: 6px;
+  padding: 2px;
+}  
