@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### db 접속 정보 ###
+src/main/resources/application.yml
