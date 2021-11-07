@@ -62,10 +62,13 @@ function ProductRegister({imageUploader}) {
                 "Authorization": `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
             }
         })
-
-            alert(`'${productData.title}'제목으로 상품등록 완료!`);
+        .then(res => {
+            alert(`${res.data.detail} 제목으로 상품 등록 완료!!`);
             goBack();
-        
+        })
+        .catch(error => {
+            alert(`상품 등록 실패`);
+        })
     }
 
     const handleChange = (e) => { //요소에 변화가 생기면 실행
