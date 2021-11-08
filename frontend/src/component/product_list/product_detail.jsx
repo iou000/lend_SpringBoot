@@ -54,7 +54,10 @@ const ProductDetail = (props) => {
                 "content": commentInputText,
             }
         })
-        .then(res => alert('댓글 작성 성공!!'))
+        .then(res => {
+            alert('댓글 작성 성공!!');
+            window.location.replace(`/product/${productId}`);
+        })
         .catch(error => alert('댓글 작성 실패..'))
     };
 

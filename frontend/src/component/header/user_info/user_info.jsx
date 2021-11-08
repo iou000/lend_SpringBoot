@@ -17,6 +17,7 @@ const UserInfo = (props) => {
 
         localStorage.removeItem('ACCESS_TOKEN');
         localStorage.removeItem('lend_user_nickname');
+        alert('로그아웃 되었습니다.')
         window.location.replace("/");
     }
 

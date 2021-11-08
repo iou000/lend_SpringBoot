@@ -33,11 +33,9 @@ const Main = (props) => {
         return await res.json();
     }
 
-    //main컴포넌트가 마운트되면  userInfo에 해당하는(지역 등) products를 받아옴
+    //main컴포넌트가 마운트되면  userInfo에 해당하는(지역 등) products를 받아옴.
     useEffect(() => {
-        // if(!userInfo) { (로그인 기능 구현 시 작성. 의존성배열userInfo 추가해야함.
-        //     return;
-        // }
+
         loadProducts()
         .then(prod => setProducts(prod))
 

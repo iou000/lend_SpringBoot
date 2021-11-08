@@ -74,13 +74,13 @@ const Login = (props) => {
 
         })
         .then(response => {
-            console.log(response);
-            console.log('로그인 성공')
+
+            alert('로그인 되었습니다.');
             localStorage.setItem('ACCESS_TOKEN',response.data.token);
             goToHome();
         })
         .catch(error => {
-            alert('아이디와 비밀번호를 확인해주세요.')
+            alert('아이디와 비밀번호를 확인해주세요.');
         })
     }
 
