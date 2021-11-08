@@ -11,6 +11,9 @@ const ProductDetail = (props) => {
         history.goBack();
     }
 
+    //리액트 라우터로 연결해준 상품 Id (url)
+    const productId = parseInt(window.location.pathname.substr(window.location.pathname.lastIndexOf('/')+1));
+
     //상품 정보
     const[product,setProduct] = useState({
         "product_id": '',
@@ -36,6 +39,8 @@ const ProductDetail = (props) => {
         setCommentInputText(e.target.value)
     };
 
+
+
     const commentSubmit = (e) => {
         e.preventDefault();
         axios({
@@ -57,7 +62,7 @@ const ProductDetail = (props) => {
     useEffect(() => {
         axios({
             method: 'get',
-            url: `/api/product/${history.location.props}`,
+            url: `/api/product/${productId}`,
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
