@@ -52,6 +52,14 @@ const Login = (props) => {
     });
 
 
+    const onLoginEnter = (e) => {
+        if(e.key ==='Enter') {
+            handleLogin(e);
+        }
+    }
+
+
+    //로그인
     const handleLogin = (e) => {
         e.preventDefault();
 
@@ -110,7 +118,7 @@ const Login = (props) => {
                 </div>
                 <div className={styles.form_group}>
                     <label htmlFor="password">비밀번호</label>
-                    <input type="password" name="password" placeholder="비밀번호를 입력해주세요" value={loginData.password || ""} onChange={handleChange}/>
+                    <input type="password" name="password" placeholder="비밀번호를 입력해주세요" value={loginData.password || ""} onChange={handleChange} onKeyPress={onLoginEnter}/>
                 </div>
                 <div className={styles.btns}>
                 <button className={styles.register_btn} onClick={goToSignUp}>회원가입</button>

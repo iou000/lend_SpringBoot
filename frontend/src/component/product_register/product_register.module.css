@@ -19,10 +19,10 @@
 /* Header */
 .header {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    height: 3.2rem;
+    height: 2.95rem;
     background: skyblue;
     color: snow;
     border-bottom: 1px solid lightgray;
@@ -36,10 +36,13 @@
     color: snow;
     font-size: 1.5rem;
     margin-left: 0.3rem;
+    position: absolute;
+    top: 0.6rem;
+    left: 0;
 }
 
-.title {
-    padding-left: 5rem;
+.title_h1 {
+    font-size: 2em;
 }
 
 /* Content */
@@ -56,20 +59,19 @@
 }
 
 /* 사진 추가 */
-.product_photo {
+.product_img {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 180px;
-    margin-bottom: 20px;
 }
 
 .imgInput {
     display: none;
 }
 
-.photo_inputBtn {
+.img_inputBtn {
     width: 100px;
     height: 100px;
     background-color: lightskyblue;
@@ -78,7 +80,7 @@
     border-radius: 5px;
     box-shadow: 2px 2px 3px #999;
     cursor: pointer;
-    margin-top: 1rem;
+    margin: 1.2rem 0;
 }
 
 /* 내용 추가 */

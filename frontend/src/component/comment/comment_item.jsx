@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo } from 'react';
 import styles from './comment_item.module.css';
 
 const CommentItem = memo(({comment}) => {
