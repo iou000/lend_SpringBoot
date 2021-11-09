@@ -16,11 +16,8 @@ function ProductRegister({imageUploader}) {
     //비동기 통신중 로딩상태
     const [loading, setLoading] = useState(false);
 
-    // 주소 받아오기
-    const [textValue, setTextValue] = useState();
-
     const getTextValue = (text) => {
-        setTextValue(text);
+
         setProductData({
             ...productData,
             ["location"]: text,
@@ -59,7 +56,7 @@ function ProductRegister({imageUploader}) {
             }
         })
         .then(res => {
-            alert(`${res.data.detail} 제목으로 상품 등록 완료!!`);
+            alert(`${res.data.title} 제목으로 상품 등록 완료!!`);
             goBack();
         })
         .catch(error => {

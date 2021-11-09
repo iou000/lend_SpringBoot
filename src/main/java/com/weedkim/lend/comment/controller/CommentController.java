@@ -32,5 +32,12 @@ public class CommentController {
         return commentService.createComment(requestDto, product, user);
     }
 
+    //댓글 삭제
+    @DeleteMapping("/api/product/comment/{commentId}")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
+    public Long removeComment(@PathVariable(value = "commentId") Long commentId) {
+
+        return commentService.removeComment(commentId);
+    }
 
 }

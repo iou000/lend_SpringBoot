@@ -35,9 +35,9 @@ const ProductDetail = (props) => {
     const[commentInputText,setCommentInputText] = useState('');
 
 
-    const commentChange = (e) => {
+    const commentChange = useCallback((e) => {
         setCommentInputText(e.target.value)
-    };
+    },[])
 
 
 
@@ -84,12 +84,12 @@ const ProductDetail = (props) => {
                 "userId": res.data.userId,
                 "postUserNickname": res.data.postUserNickname,
             });
-            setComments(res.data.comments)
+            setComments(res.data.comments);
         })
 
         
         
-    },[])
+    },[productId])
 
 
 

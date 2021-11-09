@@ -17,9 +17,13 @@ public class CommentService {
 
     @Transactional
     public Comment createComment(CommentRequestDto requestDto, Product product, User user) {
-
-
         Comment comment = new Comment(requestDto, product, user);
         return commentRepository.save(comment);
+    }
+
+    @Transactional
+    public Long removeComment(Long id) {
+        commentRepository.deleteById(id);
+        return id;
     }
 }
