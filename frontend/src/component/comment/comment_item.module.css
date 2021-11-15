@@ -17,15 +17,18 @@
   justify-content: space-between;
 }
 .commentData {
-  width: 100%;
+  width: 99%;
   font-size: 0.8em;
   margin-bottom: 0.4rem;
   padding-left: 0.2rem;
+  word-break: break-all;
 }
 
 .commentUpdate {
   display: flex;
   justify-content: flex-end;
+  height: 1.2rem;
+  margin: 4px;
 }
 
 .commentUpdateBtn {

@@ -1,9 +1,12 @@
 import axios from 'axios';
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import styles from './comment_item.module.css';
 
-const CommentItem = memo(({comment}) => {
+const CommentItem = memo(({comment, currentUserId}) => {
     
+    //수정,삭제버튼 렌더링 조건(현재 userId와 댓글 userId가 같으면 렌더링함)
+    const[showUpdateDeleteBtn,setShowUpdateDeleteBtn] = useState(false);
+
     const handleDelete = (e) => {
         e.preventDefault();
         if(window.confirm('댓글을 삭제할까요?')) {
@@ -23,22 +26,33 @@ const CommentItem = memo(({comment}) => {
         }
     }
 
-    
+    useEffect(() => {
+        console.log(comment.user.userId)
+        console.log(currentUserId)
+        if(comment.user.userId === currentUserId){
+            setShowUpdateDeleteBtn(true);
+        }
+
+    },[])
 
     
     return(
         <li className={styles.commentItem}>
             <div className={styles.commentWriter}>
-                {comment.user.nickname}
+                <span>{comment.user.nickname}</span>
             </div>
             <div className={styles.comment}>
                 <div className={styles.commentData}>
-                    {comment.content}
+                    <span>{comment.content}</span>
                 </div>
-                <div className={styles.commentUpdate}>
-                    <button className={styles.commentUpdateBtn}> 수정</button>
-                    <button className={styles.commentDeleteBtn} onClick={handleDelete}> 삭제</button>
-                </div>
+                    <div className={styles.commentUpdate}>
+                        {showUpdateDeleteBtn &&
+                            <>
+                                <button className={styles.commentUpdateBtn}> 수정</button>
+                                <button className={styles.commentDeleteBtn} onClick={handleDelete}> 삭제</button>
+                            </>
+                        }
+                    </div>
             </div>
         </li>
     );
