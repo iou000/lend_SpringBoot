@@ -32,7 +32,7 @@ const UserInfo = (props) => {
                     <button className={styles.move_profile_page}><span>내 프로필 수정 </span></button>
                 </div>
                 <div className={styles.profile_right}>
-                    <button className={styles.logoutBtn} onClick={logout}><i class="fas fa-sign-out-alt"></i></button>
+                    <button className={styles.logoutBtn} onClick={logout}><i className="fas fa-sign-out-alt"></i></button>
                 </div>
             </div>
             <div onClick={goToMyProduct} className={styles.pop_profilemenu}>
