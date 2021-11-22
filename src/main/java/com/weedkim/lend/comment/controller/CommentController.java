@@ -32,6 +32,14 @@ public class CommentController {
         return commentService.createComment(requestDto, product, user);
     }
 
+    //댓글 수정
+    @PutMapping("/api/product/comment/{commentId}")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
+    public Long updateComment(@PathVariable(value = "commentId") Long commentId, @RequestBody CommentRequestDto requestDto) {
+
+        return commentService.updateComment(commentId, requestDto);
+    }
+
     //댓글 삭제
     @DeleteMapping("/api/product/comment/{commentId}")
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
