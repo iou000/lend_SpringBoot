@@ -38,3 +38,8 @@ out/
 
 ### db 접속 정보 ###
 src/main/resources/application.yml
+
+### File DB ###
+lendDB.lock.db
+lendDB.mv.db
+lendDB.trace.db
