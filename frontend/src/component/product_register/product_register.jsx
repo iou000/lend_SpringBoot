@@ -143,9 +143,9 @@ function ProductRegister({imageUploader}) {
                         <option>로드</option>
                     </select>
                     <div className={styles.priceDiv}>
-                        <input className={styles.productHourPrice} type="text" name="price_hour" placeholder="상품 가격 (1시간 당)" 
+                        <input className={styles.productHourPrice} type="text" name="price_hour" placeholder="상품 가격(1시간)" 
                         value={productData.price_hour || ""} onChange={handleProductChange}/>
-                        <input className={styles.productDayPrice} type="text" name="price_day" placeholder="상품 가격 (1일 당)" 
+                        <input className={styles.productDayPrice} type="text" name="price_day" placeholder="상품 가격(1일)" 
                         value={productData.price_day || ""} onChange={handleProductChange}/>
                     </div>
                     <textarea className={styles.productDesc} name="detail" type="text" placeholder="상품의 상세 설명을입력하세요" 

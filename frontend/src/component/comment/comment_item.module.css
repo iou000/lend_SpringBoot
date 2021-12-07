@@ -1,8 +1,7 @@
 .commentItem {
-  width: 95%;
-  margin: 0 0.6rem;
+  width: 100%;
   border-bottom: 1px solid lightgray;
-  padding: 0.2rem 0;
+  padding: 0.2rem;
 }
 
 .commentWriter {
@@ -24,7 +23,36 @@
   word-break: break-all;
 }
 
-.commentUpdate {
+.commentForm {
+  display: flex;
+  width: 100%;
+  padding: 6px 0;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.commentInput {
+  width: 96%;
+  height: 38px;
+  resize: none;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  padding: 0.2rem;
+}
+
+.commentInput:focus {
+  outline: none;
+  border-color: skyblue;
+}
+
+.commentInput::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+.commentUpdateDeleteBox {
   display: flex;
   justify-content: flex-end;
   height: 1.2rem;
@@ -32,17 +60,51 @@
 }
 
 .commentUpdateBtn {
-  width: 32px;
-  font-size: 0.7em;
+  width: 40px;
+  font-size: 0.65em;
+  font-weight: bold;
+  background-color:rgb(240, 252, 255);
   color: rgb(68, 79, 240);
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 2px;
+  cursor: pointer;
+  margin-right: 2px;
+  transition: all 150ms ease-in-out;
+}
+
+.commentUpdateBtn:hover {
+  background-color: skyblue;
+  color: snow;
+  font-weight: bolder;
 }
 
 .commentDeleteBtn {
-  width: 32px;
-  font-size: 0.7em;
+  width: 40px;
+  font-size: 0.65em;
+  font-weight: bold;
+  background-color:rgb(240, 252, 255);
   color: rgb(255, 76, 52);
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 2px;
-}  
+  padding-left: 0;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.commentDeleteBtn:hover {
+  background-color: rgb(255, 76, 52);;
+  color: snow;
+  font-weight: bolder;
+}
+
+#updateCompleteBtn {
+  background-color:rgb(240, 252, 255);
+  color: rgb(68, 79, 240);
+  transition: all 150ms ease-in-out;
+}
+
+#updateCompleteBtn:hover {
+  background-color: skyblue;
+  color: whitesmoke;
+  font-weight: bolder;
+}

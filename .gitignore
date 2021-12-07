@@ -43,3 +43,7 @@ src/main/resources/application.yml
 lendDB.lock.db
 lendDB.mv.db
 lendDB.trace.db
+
+### 리액트 빌드된 css, js파일 ###
+src/main/resources/static/static/css
+src/main/resources/static/static/js

@@ -1,8 +1,9 @@
 .container {
   overflow: scroll;
   overflow-x: hidden;
-  height: 100%;
+  height: 100vh;
   width: 100%;
+  position: relative;
 }
 
 /* 헤더 */
@@ -115,21 +116,24 @@
 }
 
 .commentForm {
+  position:sticky;
+  bottom: 0;
   display: flex;
   width: 100%;
-  padding: 6px 0;
-  justify-content: space-evenly;
+  padding: 0.6rem 0;
+  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid lightgray;
+  background-color: snow;
 }
 
 .commentInput {
-  width: 70%;
-  height: 60px;
+  width: 73%;
+  height: 36px;
   resize: none;
   border-radius: 6px;
   border: 1px solid lightgray;
-  padding: 0.2rem;
+  padding: 0 0.2rem;
+  margin-left: 0.6rem;
 }
 
 .commentInput:focus {
@@ -137,8 +141,12 @@
   border-color: skyblue;
 }
 
+.commentInput::-webkit-scrollbar {
+  display: none;
+}
+
 .commentSubmitBtn {
-  width: 20%;
+  width: 16%;
   height: 36px;
   font-size: 0.7em;
   font-weight: 600;
@@ -146,6 +154,7 @@
   color: whitesmoke;
   border-radius: 6px;
   cursor: pointer;
+  margin-right: 0.6rem;
 }
 
 /* 스크롤바 디자인 */
