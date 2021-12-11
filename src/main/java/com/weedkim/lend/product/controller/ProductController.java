@@ -47,10 +47,8 @@ public class ProductController {
         // 현재 Security Context에 저장되어 있는 인증 정보의 username을 기준으로 한 유저 정보 및 권한 정보를 리턴
         // 토큰을 통해 유저정보를 리턴해주는거임
         User user = userService.getMyUserWithAuthorities().get(); //.get()은 Optional타입이라서
-        Long userId = user.getUserId();
-        String postUserNickname = user.getNickname();
         //응답
-        return productService.createProduct(requestDto, userId, postUserNickname);
+        return productService.createProduct(requestDto, user);
     }
 
 }

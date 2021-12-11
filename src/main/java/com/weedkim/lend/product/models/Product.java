@@ -49,17 +49,15 @@ public class Product extends Timestamped {
     @Column(nullable = false)
     private int price_day;
 
-    @Column(nullable = false)
-    private Long userId;
-
-    @Column(nullable = false)
-    private String postUserNickname;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     private List<Comment> comments;
 
 
-    public Product(ProductRequestDto requestDto, Long userId, String postUserNickname) {
+    public Product(ProductRequestDto requestDto, User user) {
         this.imgURL = requestDto.getImgURL();
         this.title = requestDto.getTitle();
         this.type = requestDto.getType();
@@ -67,8 +65,7 @@ public class Product extends Timestamped {
         this.location = requestDto.getLocation();
         this.price_hour = requestDto.getPrice_hour();
         this.price_day = requestDto.getPrice_day();
-        this.userId = userId;
-        this.postUserNickname = postUserNickname;
+        this.user = user;
     }
 
 }

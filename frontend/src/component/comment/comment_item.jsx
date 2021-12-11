@@ -78,7 +78,6 @@ const CommentItem = memo(({comment, currentUserId}) => {
         if(comment.user.userId === currentUserId){
             setShowUpdateDeleteBtn(true);
         }
-        console.log(comment.id)
     },[currentUserId, comment.user.userId])
 
     

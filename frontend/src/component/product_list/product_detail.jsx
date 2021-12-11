@@ -81,8 +81,8 @@ const ProductDetail = (props) => {
                 "price_hour": res.data.price_hour,
                 "price_day": res.data.price_day,
                 "type": res.data.type,
-                "userId": res.data.userId,
-                "postUserNickname": res.data.postUserNickname,
+                "userId": res.data.user.userId,
+                "postUserNickname": res.data.user.nickname,
             });
             setComments(res.data.comments);
         })
