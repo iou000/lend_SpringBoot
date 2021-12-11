@@ -1,6 +1,7 @@
 package com.weedkim.lend.product.service;
 
 import com.weedkim.lend.product.dto.ProductRequestDto;
+import com.weedkim.lend.product.dto.ProductsResponseDto;
 import com.weedkim.lend.product.models.Product;
 import com.weedkim.lend.product.models.ProductRepository;
 import com.weedkim.lend.user.models.User;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -18,8 +20,11 @@ public class ProductService {
     private final ProductRepository productRepository;
 
     //모든 상품 받아오기
-    public List<Product> getProduct() {
-        return productRepository.findAll(Sort.by(Sort.Direction.DESC,"createdAt"));
+    public List<ProductsResponseDto> getProduct() {
+        return productRepository.findAll(Sort.by(Sort.Direction.DESC,"createdAt"))
+                .stream()
+                .map(ProductsResponseDto::new)
+                .collect(Collectors.toList());
     }
 
     //상품 상세

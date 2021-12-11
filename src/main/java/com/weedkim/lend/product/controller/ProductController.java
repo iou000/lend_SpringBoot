@@ -1,6 +1,7 @@
 package com.weedkim.lend.product.controller;
 
 import com.weedkim.lend.product.dto.ProductRequestDto;
+import com.weedkim.lend.product.dto.ProductsResponseDto;
 import com.weedkim.lend.product.models.Product;
 import com.weedkim.lend.product.service.ProductService;
 import com.weedkim.lend.user.models.User;
@@ -20,7 +21,7 @@ public class ProductController {
 
     //등록된 전체 상품 조회
     @GetMapping("/api/products")
-    public List<Product> getProducts() {
+    public List<ProductsResponseDto> getProducts() {
         //응답
         return productService.getProduct();
     }
