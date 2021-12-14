@@ -14,7 +14,7 @@ const Product = ({product}) => {
         })
     }
 
-    function numberWithCommas(x) {
+    const numberWithCommas = (x) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
@@ -38,10 +38,11 @@ const Product = ({product}) => {
                         </div>
                     </div>
                     {/* 가격 */}
-                    <div className={styles.product_price}>
-                            <span>{numberWithCommas(product.price_hour)}원 (1시간) / </span>
-                            <span>{numberWithCommas(product.price_day)}원 (1일)</span>
-                    </div>
+                        <div className={styles.priceBox}>
+                        <span id={styles.type}>{product.type}</span>
+                            {numberWithCommas(product.price_hour)}원<span className={styles.price}>(시간) </span>
+                            {numberWithCommas(product.price_day)}원<span className={styles.price}>(일)</span>
+                        </div>
                 </div>
             </div>
         </div>

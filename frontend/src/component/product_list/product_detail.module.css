@@ -29,22 +29,23 @@
 
 .imgBox {
   width: 100%;
+  height: 250px;
   text-align: center;
   position: relative;
+  border-bottom: 1px solid lightgray;
 }
 
 .product_img {
   width: 100%;
   height: 250px;
-  border-bottom: 1px solid lightgray;
 }
 
-.product_info {
+.product {
   width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0.6rem auto;
+  margin: 0.2rem auto;
 }
 
 .userBox {
@@ -91,17 +92,18 @@
   border-bottom: 1px solid darkgray;
   margin: 0.4rem auto;
   margin-top: 0.8rem;
+  word-break:break-all;
 }
 
 .product_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   font-size: 1.4em;
-  margin-bottom: 6px;
-}
-
-.product_title > span {
-  font-size: 1em;
   font-weight: 600;
+  margin-bottom: 6px;
+  word-break:break-all;
 }
 
 .location {
@@ -112,7 +114,55 @@
 
 .product_description {
   width: 100%;
-  margin: 1rem 0;
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.product_info{
+  padding: 0.1rem 0;
+}
+
+.product_views {
+  color: rgb(97, 97, 97);
+  font-size: 0.5em;
+}
+
+.product_lend_info{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+  color: rgb(78, 130, 255);
+}
+
+.priceBox {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  font-size: 0.9em;
+}
+
+
+.lend_mark {
+  font-size: 0.6em;
+  margin-right: 0.2rem;
+  padding: 0.25rem;
+  color: white;
+  background-color: skyblue;
+  border-radius: 6px;
+}
+
+#type {
+  font-size: 0.9em;
+  margin-right: 1rem;
+}
+
+.price {
+  font-size: 0.6em;
+  color: gray;
+  margin-right: 0.6rem;
+  margin-left: 0.1rem;
 }
 
 .commentForm {
@@ -165,4 +215,15 @@
 .container::-webkit-scrollbar-thumb {
   background-color: lightgrey;
   border-radius: 1em;
+}
+
+@media screen and (max-width: 360px) {
+  .container {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    font-size: 0.75em;
+  }
 }

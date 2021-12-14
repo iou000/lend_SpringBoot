@@ -96,10 +96,11 @@ const ProductDetail = (props) => {
             console.log(error)
         })
 
-        
-        
     },[productId])
 
+    const numberWithCommas = (x) => {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
 
 
     return (
@@ -113,7 +114,7 @@ const ProductDetail = (props) => {
                         alt="" 
                     />
                 </div>
-                <div className={styles.product_info}>
+                <div className={styles.product}>
                 {/* 등록자 정보 */}
                     <header className={styles.userBox}>
                         <div className={styles.profile_left}>
@@ -127,13 +128,27 @@ const ProductDetail = (props) => {
                 {/* 상품 정보 */}
                 <section className={styles.product_detail}>
                     <div className={styles.product_title}>
-                        <span>{product.title}</span>
+                        {product.title}
+                        
                     </div>
                     <div className={styles.location}>
                         <span>{product.location}</span>
                     </div>
                     <div className={styles.product_description}>
                         <span>{product.detail}</span>
+                    </div>
+                    <div className={styles.product_info}>
+                        <span className={styles.product_views}>6분 전 &#183; </span>
+                        <span className={styles.product_views}>조회 15</span>
+                    </div>
+                    <div className={styles.product_lend_info}>
+                        <div className={styles.lend_mark}>자전거종류</div>
+                                <span id={styles.type}>{product.type}</span>
+                        <div className={styles.lend_mark}>대여 비용 </div>
+                        <div className={styles.priceBox}>
+                            {numberWithCommas(product.price_hour)}원<span className={styles.price}>(시간)</span> 
+                            {numberWithCommas(product.price_day)}원<span className={styles.price}>(일)</span>
+                        </div>
                     </div>
                 </section>
                 </div>
