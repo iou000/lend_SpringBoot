@@ -55,10 +55,16 @@ const ProductDetail = (props) => {
             }
         })
         .then(res => {
-            alert('댓글 작성 성공!!');
+            alert('댓글 작성에 성공했습니다.');
             window.location.replace(`/product/${productId}`);
         })
-        .catch(error => alert('댓글 작성 실패..'))
+        .catch(error => {
+            if(error.response.status == 405) {
+                alert('로그인 후 이용해 주세요.')
+            }else {
+                alert('댓글 작성 실패..')
+            }
+        })
     };
 
 
@@ -85,6 +91,9 @@ const ProductDetail = (props) => {
                 "postUserNickname": res.data.user.nickname,
             });
             setComments(res.data.comments);
+        })
+        .catch(error => {
+            console.log(error)
         })
 
         

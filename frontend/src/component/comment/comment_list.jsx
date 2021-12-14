@@ -10,6 +10,7 @@ const CommentList = memo(({comments}) => {
     useEffect(() => {
         getCurrentUser()
         .then(res => setCurrentUserId(res.data.userId))
+        .catch(error => setCurrentUserId(null))
 
     },[])
 
