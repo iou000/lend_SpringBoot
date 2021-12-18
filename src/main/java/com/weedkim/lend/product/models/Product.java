@@ -49,6 +49,9 @@ public class Product extends Timestamped {
     @Column(nullable = false)
     private int price_day;
 
+    @Column(nullable = false)
+    private int viewCnt;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -68,4 +71,7 @@ public class Product extends Timestamped {
         this.user = user;
     }
 
+    public void increaseViewCnt() {
+        this.viewCnt++;
+    }
 }
