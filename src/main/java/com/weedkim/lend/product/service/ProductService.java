@@ -28,10 +28,14 @@ public class ProductService {
     }
 
     //상품 상세
+    @Transactional
     public Product getProduct(Long id) {
-        return productRepository.findById(id).orElseThrow(
+        Product product = productRepository.findById(id).orElseThrow(
                 () -> new NullPointerException("해상 상품이 존재하지 않습니다.")
         );
+        //조회수 증가
+        product.increaseViewCnt();
+        return product;
     }
 
     //검색 상품 받아오기

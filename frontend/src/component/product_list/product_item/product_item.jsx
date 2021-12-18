@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { timeBefore } from '../../../service/timeBefore';
 import styles from './product_item.module.css';
 
 const Product = ({product}) => {
@@ -19,7 +20,6 @@ const Product = ({product}) => {
     }
 
 
-
     return (
         <div className={styles.product_item}>
             <div className={styles.container} onClick={onProductClick}>
@@ -34,7 +34,7 @@ const Product = ({product}) => {
                             <span>{product.title}</span>
                         </div>
                         <div className={styles.product_location}>
-                            <span>{product.location}</span>
+                            <span>{product.location} &#183; {timeBefore(product.createdAt)}</span>
                         </div>
                     </div>
                     {/* 가격 */}

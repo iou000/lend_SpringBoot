@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { timeBefore } from '../../service/timeBefore';
 import CommentList from '../comment/comment_list';
 import styles from './product_detail.module.css';
 const ProductDetail = (props) => {
@@ -26,6 +27,7 @@ const ProductDetail = (props) => {
         "type": '',
         "userId": '',
         "postUserNickname": '',
+        "viewCnt" : '',
     });
     
     //상품에 달린 댓글 정보
@@ -89,6 +91,8 @@ const ProductDetail = (props) => {
                 "type": res.data.type,
                 "userId": res.data.user.userId,
                 "postUserNickname": res.data.user.nickname,
+                "createdAt": res.data.createdAt,
+                "viewCnt": res.data.viewCnt,
             });
             setComments(res.data.comments);
         })
@@ -138,8 +142,8 @@ const ProductDetail = (props) => {
                         <span>{product.detail}</span>
                     </div>
                     <div className={styles.product_info}>
-                        <span className={styles.product_views}>6분 전 &#183; </span>
-                        <span className={styles.product_views}>조회 15</span>
+                        <span className={styles.product_views}>{timeBefore(product.createdAt)} &#183; </span>
+                        <span className={styles.product_views}>조회 {product.viewCnt}</span>
                     </div>
                     <div className={styles.product_lend_info}>
                         <div className={styles.lend_mark}>자전거종류</div>
