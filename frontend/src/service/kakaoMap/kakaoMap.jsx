@@ -1,7 +1,7 @@
 /*global kakao*/
 import React, {useEffect} from 'react';
 
-const KakaoAPI = (props) => {
+const KakaoMap = (props) => {
 
     useEffect(() => {
         var container = document.getElementById('map'); // 지도를 표시할 div설정
@@ -84,10 +84,8 @@ const KakaoAPI = (props) => {
 
     }, [])
 
-    
-
     return (
-        <div style={{}}>
+        <div>
             <input id="addressInput" type="text" placeholder="주소를 입력하세요"
             style={{
                 width: "342px",
@@ -109,7 +107,7 @@ const KakaoAPI = (props) => {
     )
 }
 
-export default KakaoAPI;
+export default KakaoMap;
 
 /* geocoder.addressSearch('경기도 군포시', function(result, status) {
             // 정상적으로 검색이 완료됐으면

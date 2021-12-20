@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useRef, useState } from 'react';
 import { useHistory } from 'react-router';
-import ProductList from '../product_list/product_list';
+import ProductList from '../product/product_list/product_list';
 import styles from './search.module.css';
 
 

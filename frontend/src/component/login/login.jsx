@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import styles from './login.module.css';
-import { KakaoAuth } from '../../service/kakaoAuth';
+import { KakaoAuth } from '../../service/oAuth/kakaoAuth';
 import axios from 'axios';
 
 const Login = (props) => {

@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useState } from 'react';
-import { getCurrentUser } from '../../service/getCurrentUser';
-import CommentItem from './comment_item';
+import { getCurrentUser } from '../../../service/getCurrentUser';
+import CommentItem from '../comment_item/comment_item';
 import styles from './comment_list.module.css';
 
 const CommentList = memo(({comments}) => {

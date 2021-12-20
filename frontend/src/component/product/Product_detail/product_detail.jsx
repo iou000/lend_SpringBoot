@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { timeBefore } from '../../service/timeBefore';
-import CommentList from '../comment/comment_list';
+import { timeBefore } from '../../../service/stringConversion/timeBefore';
+import CommentList from '../../comment/comment_list/comment_list';
 import styles from './product_detail.module.css';
 const ProductDetail = (props) => {
 

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import { getCurrentUser } from '../../service/getCurrentUser';
 import Footer from '../footer/footer';
-import Header from '../header/header';
-import ProductList from '../product_list/product_list';
+import Header from '../header/header_main/header_main';
+import ProductList from '../product/product_list/product_list';
 import styles from './main.module.css';
 
 const Main = (props) => {

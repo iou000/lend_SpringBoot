@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import styles from './header.module.css';
-import HeaderPop from './header_pop/header_pop';
+import styles from './header_main.module.css';
+import HeaderPop from '../header_popup/header_popup';
 
-const Header = ({logined}) => {
+const HeaderMain = ({logined}) => {
     
     const history = useHistory();
     const goToSearch = () => {
@@ -44,4 +44,4 @@ const Header = ({logined}) => {
 
 };
 
-export default Header;
+export default HeaderMain;

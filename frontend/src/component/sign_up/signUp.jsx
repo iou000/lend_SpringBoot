@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './signUp.module.css';
 import axios from 'axios';
-import CSRFToken from './csrftoken';
 
 const SignUp = (props) => {
     
@@ -74,7 +73,6 @@ const SignUp = (props) => {
             <h1 className={styles.title}>Lend</h1>
             {/* 회원가입 폼 */}
             <form className={styles.form} onSubmit={handleSubmit}>
-                <CSRFToken />
                 <label className={styles.label}>아이디
                     <input className={styles.input} type="text" name="username" placeholder='아이디' value={signUpdata.username || ""} onChange={handleChange}></input>
                 </label>

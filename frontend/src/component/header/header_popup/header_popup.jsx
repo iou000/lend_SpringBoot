@@ -1,9 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import UserInfo from '../user_info/user_info';
-import styles from './header_pop.module.css';
+import UserInfo from '../header_pouup_logined/header_popup_logined';
+import styles from './header_popup.module.css';
 
-const HeaderPop = ({toggleMenu, logined}) => {
+const HeaderPopUp = ({toggleMenu, logined}) => {
 
     const history = useHistory();
     //로그인 화면으로 이동
@@ -41,6 +41,6 @@ const HeaderPop = ({toggleMenu, logined}) => {
     )
 };
 
-export default HeaderPop;
+export default HeaderPopUp;
 
 // className={styles.}

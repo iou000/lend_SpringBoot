@@ -1,13 +1,12 @@
 import styles from './app.module.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Login from './component/login_register/login';
-import ProductRegister from './component/product_register/product_register';
+import Login from './component/login/login';
+import ProductRegister from './component/product/product_register/product_register';
 import KakaoAuthRedirect from './component/kakaoAuthRedirect/kakaoAuthRedirect';
-import SignUp from './component/login_register/signUp';
-import MyProduct from './component/header/myproduct/myproduct';
+import SignUp from './component/sign_up/signUp';
 import Main from './component/main/main';
 import Search from './component/search/search';
-import ProductDetail from './component/product_list/product_detail';
+import ProductDetail from './component/product/Product_detail/product_detail';
 
 function App({kakaoAuthService, imageUploader}) {
   return (
@@ -23,10 +22,6 @@ function App({kakaoAuthService, imageUploader}) {
           {/* 로그인 페이지 */}
           <Route exact path="/login">
             <Login />
-          </Route>
-
-          <Route exact path="/myproduct">
-            <MyProduct />
           </Route>
 
           {/* 상품 등록 페이지 */}

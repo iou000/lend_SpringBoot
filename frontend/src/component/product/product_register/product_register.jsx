@@ -1,9 +1,9 @@
-import KakaoAPI from './kakaoAPI';
+import KakaoMap from '../../../service/kakaoMap/kakaoMap';
 import styles from './product_register.module.css';
 import { useHistory } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import axios from 'axios';
-import Spinner from '../spinner/spinner';
+import Spinner from '../../spinner/spinner';
 
 function ProductRegister({imageUploader}) {
     // 라우터
@@ -105,7 +105,7 @@ function ProductRegister({imageUploader}) {
             </div>
             {/* Content */}
             <form className={styles.content} onSubmit={handleSubmit}>
-                <KakaoAPI getTextValue={getTextValue} name="location" value={productData.location || ""} />
+                <KakaoMap getTextValue={getTextValue} name="location" value={productData.location || ""} />
                     {/* <span>당신의 주소는 { textValue }</span> */}
                 {/* img */}
                 {!loading &&
