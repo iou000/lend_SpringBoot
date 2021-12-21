@@ -1,11 +1,15 @@
+@value borderLightGray from '../../../common/colors.css';
+@value mainSkyblue from '../../../common/colors.css';
+@value mainSnow from '../../../common/colors.css';
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 3.2rem;
-  background: skyblue;
-  border-bottom: 1px solid lightgray;
+  background: mainSkyblue;
+  border-bottom: 1px solid borderLightGray;
   margin: 0;
   padding: 0;
   position: sticky;
@@ -13,7 +17,7 @@
 }
 
 .btn {
-  color: snow;
+  color: mainSnow;
   cursor: pointer;
   padding: 0.2rem;
 }
@@ -29,7 +33,7 @@
 
 .title_h1 {
   font-size: 2.2em;
-  color: snow;
+  color: mainSnow;
   margin: 0;
 }
 

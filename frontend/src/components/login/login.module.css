@@ -1,3 +1,10 @@
+@value mainSkyblue from '../../common/colors.css';
+@value mainSnow from '../../common/colors.css';
+@value mainGray from '../../common/colors.css';
+@value borderLightGray from '../../common/colors.css';
+@value inputLightGray from '../../common/colors.css';
+
+
 .container {
   display: flex;
   flex-direction: column;
@@ -13,12 +20,12 @@
   height: 3.2rem;
   display: flex;
   flex-direction: row;
-  background-color: skyblue;
+  background-color: mainSkyblue;
 }
 
 /* 뒤로가기 버튼 */
 .gotoHome {
-  color: snow;
+  color: mainSnow;
   font-size: 1.5rem;
   margin-left: 0.3rem;
 }
@@ -62,7 +69,7 @@
   padding: 0px 10px;
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
-  background-color: #f3f3f3;
+  background-color: inputLightGray;
   border: 0;
   border-radius: 4px;
   margin-bottom: 31px;
@@ -94,7 +101,7 @@ input {
 
 .form input:focus {
   outline: none;
-  box-shadow: 0px 0px 12px 0.8px lightskyblue;
+  box-shadow: 0px 0px 12px 0.8px mainSkyblue;
 }
 
 /* 버튼 박스 */
@@ -108,16 +115,16 @@ input {
 .login_btn {
   font-size: 13px;
   padding: 5px 20px;
-  background-color: skyblue;
-  color: #fff;
+  background-color: mainSkyblue;
+  color: mainSnow;
   border-radius: 3px;
   transition: all 250ms ease-in-out;
   cursor: pointer;
 }
 
 .login_btn:hover {
-  background-color: snow;
-  color: skyblue;
+  background-color: mainSnow;
+  color: mainSkyblue;
   font-weight: bolder;
 }
 .login_btn:focus {
@@ -128,7 +135,7 @@ input {
 .register_btn {
   font-size: 13px;
   padding: 5px 20px;
-  color: grey;
+  color: mainGray;
   border-radius: 3px;
   transition: all 250ms ease-in-out;
   cursor: pointer;
@@ -139,7 +146,7 @@ input {
   width: 85%;
   margin: 0 auto;
   margin-top: 2.5rem;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid borderLightGray;
 }
 
 /* SNS로그인 */

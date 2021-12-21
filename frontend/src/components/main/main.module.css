@@ -1,3 +1,8 @@
+@value mainSkyblue from '../../common/colors.css';
+@value mainSnow from '../../common/colors.css';
+
+
+
 .main {
   display: flex;
   flex-direction: column;
@@ -15,8 +20,8 @@
   height: 60px;
   bottom: 45px;
   right: 15px;
-  background-color: skyblue;
-  color: #fff;
+  background-color: mainSkyblue;
+  color: mainSnow;
   border-radius: 50px;
   text-align: center;
   box-shadow: 2px 2px 3px #999;

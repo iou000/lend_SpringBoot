@@ -1,3 +1,8 @@
+@value mainSkyblue from '../../../common/colors.css';
+@value mainDarkGray from '../../../common/colors.css';
+@value mainSlateGray from '../../../common/colors.css';
+
+
 /* 하단 프로필메뉴 */
 .pop_profile {
   display: flex;
@@ -31,7 +36,7 @@
 
 .logoutBtn{
   font-size: 1em;
-  color: skyblue;
+  color: mainSkyblue;
   cursor: pointer;
   margin: 0;
   padding: 0;
@@ -42,20 +47,20 @@
   height: 3rem;
   width: 3rem;
   font-size: 3rem;
-  color: darkgray;
+  color: mainDarkGray;
   cursor: pointer;
   margin: 0;
   padding: 0;
 }
 
 .nickName {
-  color: slategray;
+  color: mainSlateGray;
   margin-left: 0.5rem;
 }
 
 .move_profile_page {
   font-size: 0.6em;
-  color:skyblue;
+  color:mainSkyblue;
   text-align: start;
   padding: 0;
   margin-top: 0.5rem;
@@ -82,7 +87,7 @@
 
 .profilemenuImg {
   font-size: 2.2rem;
-  color: skyblue;
+  color: mainSkyblue;
   cursor: pointer;
   margin: 0;
   padding: 0;
@@ -95,5 +100,5 @@
 }
 
 .myProduct {
-  color: slategray;
+  color: mainSlateGray;
 }

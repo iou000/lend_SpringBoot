@@ -1,3 +1,12 @@
+@value borderLightGray from '../../common/colors.css';
+@value mainSkyblue from '../../common/colors.css';
+@value mainSnow from '../../common/colors.css';
+@value mainSlateGray from '../../common/colors.css';
+@value inputLightGray from '../../common/colors.css';
+@value searchBlack from '../../common/colors.css';
+@value inputDarkGray from '../../common/colors.css';
+
+
 .signUp {
   display: flex;
   flex-direction: column;
@@ -8,7 +17,7 @@
 
 .back {
   justify-content: flex-start;
-  color: skyblue;
+  color: mainSkyblue;
   font-size: 1.5rem;
   margin: 0.5rem;
   font-size: 24px;
@@ -19,7 +28,7 @@
 
 .title {
   font-size: 4em;
-  color: skyblue;
+  color: mainSkyblue;
 }
 .form {
   width: 85%;
@@ -34,12 +43,12 @@
 }
 
 .input {
-  border: solid 1px skyblue;
+  border: solid 1px mainSkyblue;
   border-radius: 2px;
-  background-color: whitesmoke;
+  background-color: mainSnow;
   height: 2rem;
   font-size: 1em;
-  color: rgb(54, 54, 54);
+  color: inputDarkGray;
   margin-bottom: 1rem;
 }
 
@@ -50,9 +59,9 @@
 .submit {
   width: 100%;
   height: 2.5rem;
-  background-color: skyblue;
-  color: whitesmoke;
-  border: solid 1px skyblue;
+  background-color: mainSkyblue;
+  color: mainSnow;
+  border: solid 1px mainSkyblue;
   border-radius: 2px;
   cursor: pointer;
   margin: 1rem 0;

@@ -1,3 +1,9 @@
+@value borderLightGray from '../../../common/colors.css';
+@value mainSkyblue from '../../../common/colors.css';
+@value mainDarkGray from '../../../common/colors.css';
+@value mainSnow from '../../../common/colors.css';
+
+
 /* 전체 틀 */
 .left_pop {
   position: absolute;
@@ -12,7 +18,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: snow;
+  background-color: mainSnow;
   width: 300px;
   height: 100vh;
 }
@@ -26,17 +32,17 @@
   width: 90%;
   height: 90px;
   padding: 0.5rem 0;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid borderLightGray;
 }
 
 .message {
   font-size: 0.8em;
-  color: darkgray;
+  color: mainDarkGray;
 }
 
 .move_login_page {
   font-size: 1.4em;
   font-weight: bold;
-  color: skyblue;
+  color: mainSkyblue;
   cursor: pointer;
 }

@@ -1,6 +1,12 @@
+@value borderLightGray from '../../../common/colors.css';
+@value mainSkyblue from '../../../common/colors.css';
+@value commentBlue from '../../../common/colors.css';
+@value commentRed from '../../../common/colors.css';
+@value mainSnow from '../../../common/colors.css';
+
 .commentItem {
   width: 100%;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid borderLightGray;
   padding: 0.2rem;
 }
 
@@ -36,13 +42,13 @@
   height: 38px;
   resize: none;
   border-radius: 4px;
-  border: 1px solid lightgray;
+  border: 1px solid borderLightGray;
   padding: 0.2rem;
 }
 
 .commentInput:focus {
   outline: none;
-  border-color: skyblue;
+  border-color: mainSkyblue;
 }
 
 .commentInput::-webkit-scrollbar {
@@ -64,7 +70,7 @@
   font-size: 0.65em;
   font-weight: bold;
   background-color:rgb(240, 252, 255);
-  color: rgb(68, 79, 240);
+  color: commentBlue;
   border-radius: 8px;
   padding: 2px;
   cursor: pointer;
@@ -73,8 +79,8 @@
 }
 
 .commentUpdateBtn:hover {
-  background-color: skyblue;
-  color: snow;
+  background-color: mainSkyblue;
+  color: mainSnow;
   font-weight: bolder;
 }
 
@@ -83,7 +89,7 @@
   font-size: 0.65em;
   font-weight: bold;
   background-color:rgb(240, 252, 255);
-  color: rgb(255, 76, 52);
+  color: commentRed;
   border-radius: 8px;
   padding: 2px;
   padding-left: 0;
@@ -92,19 +98,19 @@
 }
 
 .commentDeleteBtn:hover {
-  background-color: rgb(255, 76, 52);;
-  color: snow;
+  background-color: commentRed;
+  color: mainSnow;
   font-weight: bolder;
 }
 
 #updateCompleteBtn {
   background-color:rgb(240, 252, 255);
-  color: rgb(68, 79, 240);
+  color: commentBlue;
   transition: all 150ms ease-in-out;
 }
 
 #updateCompleteBtn:hover {
-  background-color: skyblue;
-  color: whitesmoke;
+  background-color: mainSkyblue;
+  color: mainSnow;
   font-weight: bolder;
 }

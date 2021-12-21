@@ -1,0 +1,20 @@
+@value mainSkyblue: skyblue;
+@value mainSnow: snow;
+@value mainGray: gray;
+@value mainDarkGray: darkgray;
+@value mainSlateGray: slategray;
+
+
+@value borderLightGray: lightgray;
+@value borderDarkGray: darkgray;
+
+
+@value commentBlue: rgb(68, 79, 240);
+@value commentRed: rgb(255, 76, 52);
+
+@value inputLightGray: #f2f2f2;
+@value inputDarkGray: rgb(54, 54, 54);
+
+@value productInfoBlue: rgb(78, 130, 255);
+
+@value searchBlack: rgb(31, 31, 31);

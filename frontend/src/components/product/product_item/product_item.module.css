@@ -1,3 +1,8 @@
+@value borderLightGray from '../../../common/colors.css';
+@value mainSlateGray from '../../../common/colors.css';
+@value mainDarkGray from '../../../common/colors.css';
+@value mainGray from '../../../common/colors.css';
+
 /* 아이템 바 */
 .product_item {
   display: flex;
@@ -11,7 +16,7 @@
   display: flex;
   width: 95%;
   cursor: pointer;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid borderLightGray;
 }
 /* 좌측 이미지 영역 */
 .imagesec {
@@ -62,7 +67,7 @@
 
 .product_location {
   font-size: 0.4em;
-  color: rgb(150, 150, 150);
+  color: mainSlateGray;
 }
 
 
@@ -71,11 +76,11 @@
   width: 100%;
   text-align: right;
   font-size: 0.8em;
-  color: rgb(150, 150, 150);
+  color: mainSlateGray;
 }
 
 #type {
-  color: gray;
+  color: mainGray;
   border-radius: 8px;
   font-size: 0.6em;
   margin-right: 0.1rem;
@@ -83,7 +88,7 @@
 
 .price {
   font-size: 0.4em;
-  color: darkgray;
+  color: mainDarkGray;
   margin-right: 0.2rem;
   margin-left: 0.1rem;
 }
