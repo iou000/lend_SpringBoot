@@ -1,12 +1,12 @@
 import styles from './app.module.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Login from './component/login/login';
-import ProductRegister from './component/product/product_register/product_register';
-import KakaoAuthRedirect from './component/kakaoAuthRedirect/kakaoAuthRedirect';
-import SignUp from './component/sign_up/signUp';
-import Main from './component/main/main';
-import Search from './component/search/search';
-import ProductDetail from './component/product/Product_detail/product_detail';
+import Login from './components/login/login';
+import ProductRegister from './components/product/product_register/product_register';
+import KakaoAuthRedirect from './components/kakaoAuthRedirect/kakaoAuthRedirect';
+import SignUp from './components/sign_up/signUp';
+import Main from './components/main/main';
+import Search from './components/search/search';
+import ProductDetail from './components/product/Product_detail/product_detail';
 
 function App({kakaoAuthService, imageUploader}) {
   return (
