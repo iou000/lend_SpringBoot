@@ -1,7 +1,7 @@
 /*global kakao*/
 import React, {useEffect} from 'react';
 
-const KakaoMap = (props) => {
+const KakaoMap = ({getTextValue}) => {
 
     useEffect(() => {
         var container = document.getElementById('map'); // 지도를 표시할 div설정
@@ -43,7 +43,7 @@ const KakaoMap = (props) => {
                         //주소 입력하는 input에 클릭한 위치 정보 표시
                         document.getElementById('addressInput').value = `${result[0].address.address_name}`
 
-                        props.getTextValue(result[0].address.address_name);
+                        getTextValue(result[0].address.address_name);
                         // props.handleChange(result[0].address.address_name);
                         
                         

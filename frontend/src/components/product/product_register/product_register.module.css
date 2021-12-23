@@ -31,8 +31,6 @@
     background: mainSkyblue;
     color: mainSnow;
     border-bottom: 1px solid borderLightGray;
-    margin: 0;
-    padding: 0;
     position: sticky;
     top: 0;
 }
@@ -46,8 +44,8 @@
     left: 0;
 }
 
-.title_h1 {
-    font-size: 2em;
+.title > h1 {
+    font-size: 1.8em;
 }
 
 /* Content */
@@ -57,9 +55,7 @@
     align-items: center;
     width: 100%;
     height: 93%;
-    display: flex;
     background-color: mainSnow;
-    overflow: scroll;
     overflow-x: hidden;
 }
 
@@ -77,8 +73,8 @@
 }
 
 .img_inputBtn {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     background-color: mainSkyblue;
     color: mainSnow;
     font-weight: bold;
@@ -106,15 +102,16 @@
     background-color: inputLightGray;
 }
 
+.inputContent input:focus {
+    outline: 1px solid mainSkyblue;
+}
+
 /* 상품 이름 */
 .productName {
     width: 88%;
     font-weight: bold;
     margin: 6px 10px;
     padding: 0 10px;
-}
-.productName:focus {
-    outline: 1px solid mainSkyblue;
 }
 
 /* 자전거 종류 */
@@ -129,10 +126,10 @@
     font-family: "Open Sans", sans-serif;
     background-color: inputLightGray;
 }
-
 .bikeStyle:focus {
     outline: 1px solid mainSkyblue;
 }
+
 
 /* 상품 가격 */
 .priceDiv {
@@ -157,19 +154,10 @@
     text-align: center;
 }
 
-.productDayPrice:focus {
-    outline: 1px solid mainSkyblue;
-}
-
-.productHourPrice:focus {
-    outline: 1px solid mainSkyblue;
-}
-
 /* 상품 상세설명 */
 .productDesc {
-    min-height: 210px;
+    min-height: 180px;
     width: 90%;
-    height: 36px;
     font-size: 16px;
     border: 0;
     border-radius: 4px;

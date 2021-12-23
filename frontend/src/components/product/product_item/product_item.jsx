@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { timeBefore } from '../../../service/stringConversion/timeBefore';
 import styles from './product_item.module.css';

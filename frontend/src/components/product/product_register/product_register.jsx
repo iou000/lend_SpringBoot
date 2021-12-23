@@ -16,26 +16,71 @@ function ProductRegister({imageUploader}) {
     //비동기 통신중 로딩상태
     const [loading, setLoading] = useState(false);
 
+    //카카오맵 찍으면 찍힌 값을 가져옴
     const getTextValue = (text) => {
-
         setProductData({
             ...productData,
-            ["location"]: text,
+            "location": text,
         })
     }
     // 상품
     const[productData, setProductData] = useState({
+        "location": '',
         "imgURL": '',
         "title": '',
         "type": '',
         "price_hour": '',
         "price_day": '',
         "detail": '',
-        "location": '',
     });
+
+    //input ref 정의
+    const titleInput = useRef();
+    const typeInput = useRef();
+    const ImgRef = useRef();
+    const hpriceInput = useRef();
+    const dpriceInput = useRef();
+    const detailInput = useRef();
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
+        //입력값 검사
+        if(!productData.location) {
+            alert("주소를 입력해주세요");
+            return ;
+        }
+        if(!productData.imgURL) {
+            alert("상품 사진을 등록해주세요.");
+            ImgRef.current.focus();
+            return ;
+        }
+        if(!productData.title) {
+            alert("상품 이름을 입력해주세요.");
+            titleInput.current.focus();
+            return ;
+        }
+        if(!productData.type && productData.type === '-- 자전거 종류 --') {
+            alert("자전거 종류를 선택해주세요.");
+            console.log(productData.type)
+            typeInput.current.focus();
+            return ;
+        }
+        if(!productData.price_hour) {
+            alert("상품 가격(1시간)을 입력해주세요.");
+            hpriceInput.current.focus();
+            return ;
+        }
+        if(!productData.price_day) {
+            alert("상품 가격(1일)을 입력해주세요.");
+            dpriceInput.current.focus();
+            return ;
+        }
+        if(!productData.detail) {
+            alert("상품 상세 설명을 입력해주세요.");
+            detailInput.current.focus();
+            return ;
+        }
 
 
         axios({
@@ -73,7 +118,6 @@ function ProductRegister({imageUploader}) {
     }
 
     // 이미지 인풋과 사진 추가 버튼 연결
-    const ImgRef = useRef();
     const imgBtnChange = (e) => {
         e.preventDefault();
         ImgRef.current.click(); //사진추가 버튼 클릭 == fileInput 클릭
@@ -100,12 +144,12 @@ function ProductRegister({imageUploader}) {
                     <button className={styles.goBack} onClick={goBack}><i className="fas fa-arrow-left"></i></button>
                 </div>
                 <div className={styles.title}>
-                    <h1 className={styles.title_h1}>상품 등록</h1>
+                    <h1>상품 등록</h1>
                 </div>
             </div>
             {/* Content */}
             <form className={styles.content} onSubmit={handleSubmit}>
-                <KakaoMap getTextValue={getTextValue} name="location" value={productData.location || ""} />
+                <KakaoMap getTextValue={getTextValue}/>
                     {/* <span>당신의 주소는 { textValue }</span> */}
                 {/* img */}
                 {!loading &&
@@ -123,7 +167,7 @@ function ProductRegister({imageUploader}) {
                     </div>
                 }
 
-                {productData.imgURL !== '' && 
+                {productData.imgURL && 
                             <img
                             className="imgBox"
                             key=""
@@ -134,22 +178,22 @@ function ProductRegister({imageUploader}) {
                 }
                 {/* Product Input */}
                 <div className={styles.inputContent}>
-                    <input className={styles.productName} name="title" type="text" placeholder="상품 이름"
-                    value={productData.title || ""} onChange={handleProductChange} />
-                    <select name="type" className={styles.bikeStyle} value= {productData.type || ""} onChange={handleProductChange}>
+                    <input className={styles.productName} name="title" type="text" ref={titleInput} placeholder="상품 이름"
+                    value={productData.title} onChange={handleProductChange} />
+                    <select name="type" className={styles.bikeStyle} value= {productData.type} ref={typeInput} onChange={handleProductChange}>
                         <option>-- 자전거 종류 --</option>
                         <option>하이브리드</option>
-                        <option>MTV</option>
+                        <option>MTB</option>
                         <option>로드</option>
                     </select>
                     <div className={styles.priceDiv}>
-                        <input className={styles.productHourPrice} type="text" name="price_hour" placeholder="상품 가격(1시간)" 
-                        value={productData.price_hour || ""} onChange={handleProductChange}/>
-                        <input className={styles.productDayPrice} type="text" name="price_day" placeholder="상품 가격(1일)" 
-                        value={productData.price_day || ""} onChange={handleProductChange}/>
+                        <input className={styles.productHourPrice} type="text" name="price_hour" ref={hpriceInput} placeholder="상품 가격(1시간)" 
+                        value={productData.price_hour} onChange={handleProductChange}/>
+                        <input className={styles.productDayPrice} type="text" name="price_day" ref={dpriceInput} placeholder="상품 가격(1일)" 
+                        value={productData.price_day} onChange={handleProductChange}/>
                     </div>
-                    <textarea className={styles.productDesc} name="detail" type="text" placeholder="상품의 상세 설명을입력하세요" 
-                    value={productData.detail || ""} onChange={handleProductChange}/>
+                    <textarea className={styles.productDesc} name="detail" type="text" ref={detailInput} placeholder="상품의 상세 설명을입력하세요" 
+                    value={productData.detail} onChange={handleProductChange}/>
                     
                 </div>
                 {/* Submit */}

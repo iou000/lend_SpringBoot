@@ -61,7 +61,7 @@ const ProductDetail = (props) => {
             window.location.replace(`/product/${productId}`);
         })
         .catch(error => {
-            if(error.response.status == 405) {
+            if(error.response.status === 405) {
                 alert('로그인 후 이용해 주세요.')
             }else {
                 alert('댓글 작성 실패..')
