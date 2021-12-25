@@ -1,4 +1,4 @@
-import KakaoMap from '../../../service/kakaoMap/kakaoMap';
+import KakaoMap from '../../kakaoMap/kakaoMap';
 import styles from './product_register.module.css';
 import { useHistory } from 'react-router-dom';
 import { useState, useRef } from 'react';

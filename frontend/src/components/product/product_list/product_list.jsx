@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './product_list.module.css';
-import Product from '../product_item/product_item';
+import ProductItem from '../product_item/product_item';
 
 
 const ProductList = ({products}) => {
@@ -10,7 +10,7 @@ const ProductList = ({products}) => {
             {/* <button className={styles.btn_regiprod}>버튼</button> */}
             {
                 products.map(product => 
-                    <Product 
+                    <ProductItem 
                         key={product.id}
                         product={product}
                     />

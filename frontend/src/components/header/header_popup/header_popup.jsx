@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import UserInfo from '../header_pouup_logined/header_popup_logined';
+import HeaderPopupLogined from '../header_pouup_logined/header_popup_logined';
 import styles from './header_popup.module.css';
 
 const HeaderPopUp = ({toggleMenu, logined}) => {
@@ -34,7 +34,7 @@ const HeaderPopUp = ({toggleMenu, logined}) => {
                     )
                     }
                     {logined &&
-                        <UserInfo/>
+                        <HeaderPopupLogined />
                     }
             </div>  
         </div>

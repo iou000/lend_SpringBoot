@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import styles from './header_popup_logined.module.css';
 
-const HeaderPopupUser = (props) => {
+const HeaderPopupLogined = (props) => {
 
     const history = useHistory();
     
@@ -55,4 +55,4 @@ const HeaderPopupUser = (props) => {
     )
 };
 
-export default HeaderPopupUser;
+export default HeaderPopupLogined;

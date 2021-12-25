@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import styles from './header_main.module.css';
-import HeaderPop from '../header_popup/header_popup';
+import HeaderPopUp from '../header_popup/header_popup';
 
 const HeaderMain = ({logined}) => {
     
@@ -24,7 +24,7 @@ const HeaderMain = ({logined}) => {
 
     return (
         <header className={styles.header}>
-            {isSideMenuOpen.menuOpen && <HeaderPop toggleMenu={toggleSideMenu} logined={logined}/>}
+            {isSideMenuOpen.menuOpen && <HeaderPopUp toggleMenu={toggleSideMenu} logined={logined}/>}
             
             <div className={styles.header_left}>
                 <button className={`${styles.btn} ${styles.barBtn}`} onClick={toggleSideMenu}>

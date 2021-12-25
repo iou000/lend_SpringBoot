@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom';
 import { timeBefore } from '../../../service/stringConversion/timeBefore';
 import styles from './product_item.module.css';
 
-const Product = ({product}) => {
+const ProductItem = ({product}) => {
         
     const history = useHistory();
 
@@ -48,4 +48,4 @@ const Product = ({product}) => {
     )
 };
 
-export default Product;
+export default ProductItem;
