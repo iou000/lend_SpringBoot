@@ -19,14 +19,13 @@
 
 ## 프론트엔드
 
-- **프론트엔드 사용 기술, 라이브러리**
+### **프론트엔드 사용 기술, 라이브러리**
     
-    html, css, js, react, react-router-dom, postcss(모듈화), cloudinary CDN(이미지 서버)
-    
+    html, css, js, react, react-router-dom, postcss(모듈화), cloudinary CDN(이미지 서버), 
     axios, 카카오맵 api, 카카오로그인 api, fontawesome
     
-- 개발툴 : vscode
-- **프론트엔드 디렉토리 구조**
+### 개발툴 : vscode
+### **프론트엔드 디렉토리 구조**
 
 ```bash
 ├─common
@@ -56,35 +55,35 @@
     └─stringConversion       //문자열 변경 관련 함수
 ```
 
-- **컴포넌트 구조**
-- App
-    - Main  [메인 페이지]
-        - Header
-            - HeaderPopUp
-            - HeaderPopUpLogined
-        - ProductList
-            - ProductItem
-        - Footer
-    - Login  [로그인 페이지]
-    - SignUp  [회원가입 페이지]
-    - ProductRegister  [상품 등록 페이지]
-        - KakaoMap
-        - Spinner
-    - ProductDetail  [상품 상세 페이지]
-        - CommentList
-            - CommentItem
-    - Search  [상품 검색 페이지]
-        - ProductList
-            - ProductItem
+### **컴포넌트 구조**
+    - App
+        - Main  [메인 페이지]
+            - Header
+                - HeaderPopUp
+                - HeaderPopUpLogined
+            - ProductList
+                - ProductItem
+            - Footer
+        - Login  [로그인 페이지]
+        - SignUp  [회원가입 페이지]
+        - ProductRegister  [상품 등록 페이지]
+            - KakaoMap
+            - Spinner
+        - ProductDetail  [상품 상세 페이지]
+            - CommentList
+                - CommentItem
+        - Search  [상품 검색 페이지]
+            - ProductList
+                - ProductItem
 
 ## 백엔드
 
-- **백엔드 개발환경, 사용 라이브러리**
+### **백엔드 개발환경, 사용 라이브러리**
     
     spring-boot 2.4.1, lombok, springweb, spring data jpa, spring security, jjwt-api 0.11.2, H2 Database
     
-- 개발툴 : IntelliJ
-- **백엔드 main 디렉토리 구조**
+### 개발툴 : IntelliJ
+### **백엔드 main 디렉토리 구조**
 
 ```bash
 ├─comment         // 댓글 관련 API
@@ -108,17 +107,30 @@
     └─service
 ```
 
-- DB
+### **DB**
 
 ![db](https://user-images.githubusercontent.com/68727627/147414113-293fd6d1-b6bf-476a-bd73-cd78b8589347.JPG)
 
-- **프로젝트 기능**
-    1. 상품 관련 기능
-    2. 댓글 관련 기능
-    3. 인증 관련 기능
-    4. 유저 관련 기능
+### **프로젝트 주요 기능**
 
-- **배포**
+    1. 인증 관련 기능
+        a. 회원 가입
+        b. 로그인
+        c. 유저 정보 조회
+        
+    2. 상품 관련 기능
+        a. 전체 상품 조회
+        b. 검색 상품 조회
+        c. 상품 상세 조회
+        d. 상품 등록
+        
+    2. 댓글 관련 기능
+        a. 댓글 등록
+        b. 댓글 수정
+        c. 댓글 삭제
+
+
+### **배포**
     
     AWS EC2 + RDS
     
