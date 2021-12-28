@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.weedkim.lend.comment.models.Comment;
 import com.weedkim.lend.product.dto.ProductRequestDto;
 import com.weedkim.lend.user.models.User;
+import com.weedkim.lend.utils.URLValidator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -61,11 +62,37 @@ public class Product extends Timestamped {
 
 
     public Product(ProductRequestDto requestDto, User user) {
-        this.imgURL = requestDto.getImgURL();
+        // 입력값 Validation
+        if (user.getUserId() == null || user.getUserId() < 0) {
+            throw new IllegalArgumentException("유효하지 않은 회원입니다.");
+        }
+        if (requestDto.getTitle() == null || requestDto.getTitle().isEmpty()) {
+            throw new IllegalArgumentException("상품 제목이 올바르지 않습니다.");
+        }
+        if (requestDto.getLocation() == null || requestDto.getLocation().isEmpty()) {
+            throw new IllegalArgumentException("지역이 올바르지 않습니다.");
+        }
+        if (!URLValidator.urlValidator(requestDto.getImgURL())) {
+            throw new IllegalArgumentException("상품 이미지 URL 포맷이 맞지 않습니다.");
+        }
+        if (requestDto.getType() == null || requestDto.getType().isEmpty()) {
+            throw new IllegalArgumentException("상품 타입이 올바르지 않습니다.");
+        }
+        if (requestDto.getDetail() == null || requestDto.getDetail().isEmpty()) {
+            throw new IllegalArgumentException("상품 설명이 올바르지 않습니다.");
+        }
+        if (requestDto.getPrice_hour() <= 0) {
+            throw new IllegalArgumentException("상품 가격(시간)이 올바르지 않습니다.");
+        }
+        if (requestDto.getPrice_day() <= 0) {
+            throw new IllegalArgumentException("상품 가격(일)이 올바르지 않습니다.");
+        }
+
         this.title = requestDto.getTitle();
+        this.location = requestDto.getLocation();
+        this.imgURL = requestDto.getImgURL();
         this.type = requestDto.getType();
         this.detail = requestDto.getDetail();
-        this.location = requestDto.getLocation();
         this.price_hour = requestDto.getPrice_hour();
         this.price_day = requestDto.getPrice_day();
         this.user = user;
