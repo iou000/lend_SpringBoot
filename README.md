@@ -107,9 +107,8 @@
     └─service
 ```
 
-### **DB**
-
-![db](https://user-images.githubusercontent.com/68727627/147414113-293fd6d1-b6bf-476a-bd73-cd78b8589347.JPG)
+### **ERD**
+![lend_erd](https://user-images.githubusercontent.com/68727627/147577256-9ba69d16-6500-41ac-8c01-b62c26435cf3.JPG)
 
 ### **프로젝트 주요 기능**
 
